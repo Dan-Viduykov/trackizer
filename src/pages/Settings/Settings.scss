@@ -1,0 +1,136 @@
+.settings {
+    
+    &__header {
+        position: relative;
+    }
+
+    &__top {
+        margin-bottom: 40px;
+        padding-top: 8px;
+        display: flex;
+        justify-content: center;
+        color: #A2A2B5;
+    }
+
+    &__arrow-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        color: inherit;
+        font-size: 24px;
+    }
+
+    &__page-name {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+    }
+
+    &__user {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    &__img {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 8px;
+        display: flex;
+        background: #A2A2B5;
+        border-radius: 100px;
+    }
+
+    &__user-name {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 32px;
+        color: #FFFFFF;
+        margin-bottom: 0;
+    }
+
+    &__mail {
+        margin-bottom: 16px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.2px;
+        color: #A2A2B5;
+    }
+
+    &__btn-edit {
+        margin: 0 auto;
+        padding: 6px 30px;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    &__category {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__category-item {
+        margin-bottom: 24px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__category-title {
+        margin-bottom: 8px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &__list {
+        padding: 16px 20px;
+        background: rgba(78, 78, 97, 0.2);
+        border-radius: 16px;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__item-icon {
+        font-size: 18px;
+        margin-right: 20px;
+    }
+
+    &__item-name {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        margin-right: auto;
+    }
+
+    &__item-description {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.2px;
+        color: #A2A2B5;
+
+        & .angle-right {
+            font-size: 14px;
+            margin-left: 8px;
+        }
+    }
+}
