@@ -1,12 +1,15 @@
 @import './sass/style.scss';
 
 .app {
+    color: #FFFFFF;
+    font-family: "Inter";
+}
+
+.wrap {
     min-width: 100vw;
     min-height: 100vh;
     width: 100%;
     height: 100%;
     padding: 24px 24px 22px;
     background-color: #0E0E12;
-    color: #FFFFFF;
-    font-family: "Inter";
 }

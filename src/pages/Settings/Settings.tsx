@@ -11,7 +11,7 @@ import Button from "../../components/Button";
 
 const Settings: FC = () => {
     return (
-        <div className="settings">
+        <div className="settings wrap">
             <div className="settings__header">
                 <div className="settings__top">
                     <button className="settings__arrow-back"><FontAwesomeIcon icon={faAngleLeft} /></button>

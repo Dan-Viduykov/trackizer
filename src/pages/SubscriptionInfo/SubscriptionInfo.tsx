@@ -7,7 +7,7 @@ import Button from "../../components/Button";
 
 const SubscriptionInfo: FC = () => {
     return (
-        <div className="sub">
+        <div className="sub wrap">
             <div className="sub__header">
                 <div className="sub__actions">
                     <button className="sub__arrow-back"><FontAwesomeIcon icon={faAngleLeft} /></button>
