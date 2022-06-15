@@ -11,7 +11,7 @@ interface ButtonProps {
 const Button: FC<ButtonProps> = (props) => {
     return <button
         type={`${props.type}`}
-        className={`button ${props.className} ${props.btnType}`} >
+        className={`button border ${props.className} ${props.btnType}`} >
         {props.children}
     </button>
 }

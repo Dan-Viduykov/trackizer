@@ -19,3 +19,18 @@
                 mask-composite: exclude; 
     }
 }
+
+.img {
+    display: flex;
+    background: #A2A2B5;
+    border-radius: 30%;
+}
+
+.input {
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    border: 1px solid $gray70;
+    border-radius: 16px;
+    color: $white;
+}
