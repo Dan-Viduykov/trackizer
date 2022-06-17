@@ -3,16 +3,18 @@ import './Button.scss'
 
 interface ButtonProps {
     children: React.ReactNode;
-    className: string;
-    type: "button" | "submit" | "reset";
-    btnType: "Primary" | "Secondary";
+    className?: string;
+    type?: "button" | "submit" | "reset";
+    btnType?: "Primary" | "Secondary";
 }
 
 const Button: FC<ButtonProps> = (props) => {
+    const { children, className, type = 'submit', btnType } = props;
+
     return <button
-        type={`${props.type}`}
-        className={`button border ${props.className} ${props.btnType}`} >
-        {props.children}
+        type={`${type}`}
+        className={`button border ${className} ${btnType}`} >
+        {children}
     </button>
 }
 

@@ -1,0 +1,136 @@
+@import '../../sass/style.scss';
+
+.home { 
+    background-color: $gray80;
+    
+    &__counter {
+        margin: 0 auto 20px;
+        text-align: center;
+        position: relative;
+
+        &::after {
+            width: 100%;
+            height: 100%;
+            content: '';
+            position: absolute;
+            top: 32px;
+            left: calc(50% - 112.5px);
+            background-image: url('../../assets/svg/Ellipse3.svg');    
+            background-repeat: no-repeat;
+            background-size: 225px 225px;
+        }
+    }
+
+    &__total {
+
+    }   
+
+    &__indicator {
+        margin-bottom: 75px;
+    }
+
+    &__logo {
+        margin-bottom: 24px;
+    }
+
+    &__total-price {
+        margin-bottom: 30px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        
+        &::after {
+            content: 'This month bills';
+            margin-top: 16px;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 16px;
+            color: $gray40;
+        }
+    }    
+
+    &__total-btn {
+        margin-bottom: 36px;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 100px;
+        position: relative;
+        background-color: $gray70;
+        color: $white;
+    }
+
+    &__statistic {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__statistic-item {
+        padding: 16px 18px;
+        background: $gray70;
+        border-radius: 16px;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            top: 0;
+        }
+    }
+
+    &__statistic-name {
+        color: $gray40;
+    }
+
+    &__statistic-info {
+
+    } 
+
+    &__subs {
+
+    }
+
+    &__subs-modes {
+        padding: 7px 9px;
+        margin-bottom: 16px;
+        background-color: $gray100;
+        border-radius: 16px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &__subs-mode {
+        padding: 10px 23px;
+        background: rgba(78, 78, 97, 0.2);
+        border-radius: 16px;
+    }
+
+    &__subs-list {
+
+    }
+
+    &__sub {
+        padding: 12px;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid $gray70;
+        border-radius: 16px;
+    }
+
+    &__sub-img {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+        background: $gray40;
+        border-radius: 12px;
+    }
+
+    &__sub-name {
+        margin-right: auto;
+    }
+
+    &__sub-price {
+
+    }
+
+}
