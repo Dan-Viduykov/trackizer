@@ -4,10 +4,11 @@ import './HomeScreen.scss'
 import logo from '../../assets/svg/logo.svg'
 import Indicator from "./Indicator/Indicator";
 import Statistics from "./Statistics";
+import SubsList from "../../components/SubsList";
 
 const HomeScreen: FC = () => {
     return (
-        <div className="home wrap">
+        <div className="home wrap shadow-screen">
             <div className="home__counter">
                 <div className="home__total">
                     <div className="home__indicator">
@@ -24,28 +25,9 @@ const HomeScreen: FC = () => {
                     <div className="home__subs-mode ft-1">Your subscriptions</div>
                     <div className="home__subs-mode ft-1">Upcoming bills</div>
                 </div>
-                <ol className="home__subs-list">
-                    <li className="home__sub">
-                        <div className="home__sub-img"><img src="" alt="" /></div>
-                        <p className="home__sub-name ft-2">Spotify</p>
-                        <p className="home__sub-price ft-2">$5.99</p>
-                    </li>
-                    <li className="home__sub">
-                        <div className="home__sub-img"><img src="" alt="" /></div>
-                        <p className="home__sub-name ft-2">YouTube Premium</p>
-                        <p className="home__sub-price ft-2">$18.99</p>
-                    </li>
-                    <li className="home__sub">
-                        <div className="home__sub-img"><img src="" alt="" /></div>
-                        <p className="home__sub-name ft-2">Microsoft OneDrive</p>
-                        <p className="home__sub-price ft-2">$29.99</p>
-                    </li>
-                    <li className="home__sub">
-                        <div className="home__sub-img"><img src="" alt="" /></div>
-                        <p className="home__sub-name ft-2">Netflix</p>
-                        <p className="home__sub-price ft-2">$37.99</p>
-                    </li>
-                </ol>
+                <div className="home__subs-list">
+                    <SubsList />
+                </div>
             </div>
             <BottomBar home />
         </div>
