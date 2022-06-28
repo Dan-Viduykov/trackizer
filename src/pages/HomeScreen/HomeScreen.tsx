@@ -67,7 +67,7 @@ const HomeScreen: FC = () => {
                     </li>
                 </ol>
             </div>
-            <BottomBar />
+            <BottomBar home />
         </div>
     )
 }

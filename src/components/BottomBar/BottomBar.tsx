@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import './BottomBar.scss'
 
 import { faCreditCardAlt } from "@fortawesome/free-regular-svg-icons";
@@ -6,30 +6,49 @@ import { faCalendarDays, faHouse, faListUl, faPlus } from "@fortawesome/free-sol
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import bg from '../../assets/svg/bottom-bar.svg'
 
-const BottomBar: FC = () => {
+import { NavLink } from "react-router-dom";
+
+interface BottomBarProps {
+    home?: boolean;
+    budgets?: boolean;
+    calendar?: boolean;
+    creditCards?: boolean;
+}
+
+const BottomBar: FC<BottomBarProps> = (props) => {
+    const { home, budgets, calendar, creditCards } = props;
+
     return (
-        <nav className="bottom-bar">
+        <footer className="bottom-bar">
             <img src={bg} alt="" />
             <button className="bottom-bar__add-sub"><FontAwesomeIcon icon={faPlus}/></button>
-            <div className="bottom-bar__buttons">
-                <label htmlFor="home" className="bottom-bar__label" >
-                    <input id="home" type="radio" name="nav" defaultChecked />
-                    <FontAwesomeIcon icon={faHouse} />
-                </label>
-                <label htmlFor="list" className="bottom-bar__label" >
-                    <input id="list" type="radio" name="nav" />
-                    <FontAwesomeIcon icon={faListUl} />
-                </label>
-                <label htmlFor="calendar" className="bottom-bar__label" >
-                    <input id="calendar" type="radio" name="nav" />
-                    <FontAwesomeIcon icon={faCalendarDays} />
-                </label>
-                <label htmlFor="credit" className="bottom-bar__label" >
-                    <input id="credit" type="radio" name="nav" />
-                    <FontAwesomeIcon icon={faCreditCardAlt} />
-                </label>
-            </div>
-        </nav>
+            <nav className="bottom-bar__buttons">
+                <NavLink to='/'>
+                    <label htmlFor="home" className="bottom-bar__label">
+                            <input id="home" type="radio" name="nav" defaultChecked={home} />
+                            <FontAwesomeIcon icon={faHouse} />
+                    </label>
+                </NavLink>
+                <NavLink to='/budgets'>
+                    <label htmlFor="listApp" className="bottom-bar__label">
+                            <input id="listApp" type="radio" name="nav" defaultChecked={budgets} />
+                            <FontAwesomeIcon icon={faListUl} />
+                    </label>
+                </NavLink>
+                <NavLink to='/calendar'>
+                    <label htmlFor="calendar" className="bottom-bar__label">
+                            <input id="calendar" type="radio" name="nav" defaultChecked={calendar} />
+                            <FontAwesomeIcon icon={faCalendarDays} />
+                    </label>
+                </NavLink>
+                <NavLink to='/creditCards'>
+                    <label htmlFor="credit" className="bottom-bar__label">
+                            <input id="credit" type="radio" name="nav" defaultChecked={creditCards} />
+                            <FontAwesomeIcon icon={faCreditCardAlt} />
+                    </label>
+                </NavLink>
+            </nav>
+        </footer>
     )
 }
 

@@ -1,0 +1,135 @@
+@import '../../sass/style.scss';
+
+.calendar {
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    background-color: $gray80;
+
+    &__top {
+        padding: 32px 24px;
+        background-color: $gray70;
+        border-radius: 0px 0px 24px 24px;
+    }
+
+    &__title {
+        margin: 42px 0 16px;
+    }
+
+    &__select {
+        margin-bottom: 24px;
+
+        &::before {
+            content: '3 subscriptions for today';
+            margin-right: auto;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            color: $gray30;
+        }
+    }
+
+    &__carousel {
+        
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        min-width: 48px;
+        height: 100px;
+        padding: 8px 0;
+        margin-right: 8px;
+        position: relative;
+        background-color: $gray60;
+        border-radius: 16px;
+        text-align: center;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &::after {
+            content: 'Mo';
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            color: $gray30;
+        }
+
+        &--active {
+            background-color: $gray50;
+        }
+    }
+
+    &__item-date {
+
+    }
+
+    &__subs {
+        padding: 24px;
+    }
+
+    &__period {
+        margin-bottom: 24px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__mount {
+        display: flex;
+        flex-direction: column;
+
+        &::after {
+            content: '01.08.2022';
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            color: $gray30;
+        }
+    }
+
+    &__total-price {
+        display: flex;
+        flex-direction: column;
+
+        &::after {
+            content: 'in upcoming bills';
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            color: $gray30;
+        }
+    }
+
+    &__subs-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__sub {
+        width: 160px;
+        padding: 16px;
+        margin: 5px;
+        background-color: $gray70;
+        border-radius: 16px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__sub-logo {
+    }
+
+    &__sub-title {
+        margin-top: auto;
+    }
+
+    &__sub-price {
+
+    }
+}

@@ -5,29 +5,8 @@
         margin-bottom: 24px ;
     }
 
-    &__top {
-        margin-bottom: 40px;
-        padding-top: 8px;
-        display: flex;
-        justify-content: center;
-        color: #A2A2B5;
-    }
-
-    &__arrow-back {
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: transparent;
-        outline: none;
-        border: none;
-        color: inherit;
-        font-size: 24px;
-    }
-
-    &__page-name {
-    }
-
     &__user {
+        margin-top: 40px;
         display: flex;
         flex-direction: column;
         justify-content: center;

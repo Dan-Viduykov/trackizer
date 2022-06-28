@@ -1,0 +1,111 @@
+@import '../../sass/style.scss';
+
+.budgets {
+
+    &__indicator {
+        margin-top: 45px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    &__lines {
+        width: 100%;
+        height: 5px;
+        margin-bottom: 45px;
+        background: #4E4E61;
+        border-radius: 99px;
+    }
+
+    &__line {
+
+    }
+
+    &__total {
+        margin-bottom: 4px;
+    }
+
+    &__capital {
+        color: $gray30;
+    }
+
+    &__info { 
+        width: 100%;
+        padding: 20px 0;
+        margin-bottom: 16px;
+        border: 1px solid $gray60;
+        border-radius: 16px;
+        text-align: center;
+        position: relative;
+
+        img {
+            margin-left: 8px;
+            padding-bottom: 5px;
+        }
+    }
+
+    &__categories {
+
+    }
+
+    &__category {
+        margin-bottom: 8px;
+        position: relative;
+    }
+
+    &__add {
+        width: 100%;
+        padding: 32px 0;
+        background-color: transparent;
+        border: 1px dashed $gray60;
+        border-radius: 16px;
+        color: $gray30;
+    }
+}
+
+.category {
+    padding: 16px;
+    background: $gray80;
+    border-radius: 16px;
+    position: relative;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: auto;
+
+        &:first-child {
+            font-size: 32px;
+        }
+    }
+
+    &__title {
+        margin-right: auto;
+        margin-left: 20px;
+
+        p:last-child {
+            color: $gray30;
+        }
+    }
+
+    &__price {
+        p:last-child {
+            color: $gray30;
+        }
+    }
+
+    &__indicator {
+        width: 100%;
+        height: 3px;
+        margin-top: 16px;
+        border-radius: 99px;
+        background-color: $gray60;
+
+        div {
+            width: 30%;
+            height: 3px;
+            border-radius: 99px;
+            background-color: $accent-s100;
+        }
+    }
+}
