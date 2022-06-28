@@ -21,7 +21,9 @@ const initialState: AppState = {
             currency: 'USD ($)',
             price: 18.99,
         }
-    ]
+    ],
+    moneyLimit: 1800,
+    moneySpent: 1200,
 }
 
 export const AppSlice = createSlice({

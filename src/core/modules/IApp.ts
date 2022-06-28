@@ -1,5 +1,7 @@
 export interface AppState {
-    subscriptions: ISub[]
+    subscriptions: ISub[];
+    moneyLimit: number;
+    moneySpent: number;
 }
 
 export interface ISub {
