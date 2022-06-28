@@ -3,6 +3,7 @@ import BottomBar from "../../components/BottomBar";
 import './HomeScreen.scss'
 import logo from '../../assets/svg/logo.svg'
 import Indicator from "./Indicator/Indicator";
+import Statistics from "./Statistics";
 
 const HomeScreen: FC = () => {
     return (
@@ -16,20 +17,7 @@ const HomeScreen: FC = () => {
                     <p className="home__total-price ft-7">$1,235</p>
                     <button className="home__total-btn ft-1 border">See your budget</button>
                 </div>
-                <div className="home__statistic">
-                    <div className="home__statistic-item border">
-                        <p className="home__statistic-name ft-1">Active subs</p>
-                        <p className="home__statistic-info ft-2">12</p>
-                    </div>
-                    <div className="home__statistic-item border">
-                        <p className="home__statistic-name ft-1">Highest subs</p>
-                        <p className="home__statistic-info ft-2">$19.99</p>
-                    </div>
-                    <div className="home__statistic-item border">
-                        <p className="home__statistic-name ft-1">Lowest subs</p>
-                        <p className="home__statistic-info ft-2">$5.99</p>
-                    </div>
-                </div>
+                <Statistics />
             </div>
             <div className="home__subs">
                 <div className="home__subs-modes">

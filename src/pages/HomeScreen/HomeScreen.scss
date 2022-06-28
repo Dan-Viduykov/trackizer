@@ -59,34 +59,7 @@
         color: $white;
     }
 
-    &__statistic {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    &__statistic-item {
-        padding: 16px 18px;
-        background: $gray70;
-        border-radius: 16px;
-        position: relative;
-
-        &::before {
-            position: absolute;
-            top: 0;
-        }
-    }
-
-    &__statistic-name {
-        color: $gray40;
-    }
-
-    &__statistic-info {
-
-    } 
-
-    &__subs {
-
-    }
+    &__subs {}
 
     &__subs-modes {
         padding: 7px 9px;

@@ -19,11 +19,11 @@ const initialState: AppState = {
             category: 'Enterteintment',
             firstPayment: `${new Date('8 1 2022').getDate()} ${new Date('8 1 2022').getMonth()} ${new Date('8 1 2022').getFullYear()}`,
             currency: 'USD ($)',
-            price: 18.99,
+            price: 15.99,
         }
     ],
     moneyLimit: 1800,
-    moneySpent: 1200,
+    moneySpent: 1200
 }
 
 export const AppSlice = createSlice({
