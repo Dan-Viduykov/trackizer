@@ -36,6 +36,8 @@
 }
 
 .shadow-screen {
+    padding-bottom: 70px;
+
     &::after {
         content: '';
         position: fixed;
