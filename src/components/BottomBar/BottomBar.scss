@@ -2,10 +2,11 @@
 
 .bottom-bar {
     padding-top: 11px;
-    position: absolute;
+    position: fixed;
     left: 30px;
     bottom: 22px;
     text-align: center;
+    z-index: 2;
 
     &__add-sub {
         width: 48px;
@@ -35,16 +36,21 @@
             display: none;
         }
     }
+
+    &__buttons-group {}
+
+    &__buttons-link {
+        &:nth-child(1),
+        &:nth-child(3) {
+            margin-right: 50px;
+        }
+    }
     
     &__label {
         font-size: 18px;
         background-color: transparent;
         border: none;
         color: $gray30;
-
-        &:nth-child(2) {
-            margin-right: 90px;
-        }
     }
 
     input[type="radio"]:checked ~ * { 

@@ -23,30 +23,34 @@ const BottomBar: FC<BottomBarProps> = (props) => {
             <img src={bg} alt="" />
             <button className="bottom-bar__add-sub"><FontAwesomeIcon icon={faPlus}/></button>
             <nav className="bottom-bar__buttons">
-                <NavLink to='/'>
-                    <label htmlFor="home" className="bottom-bar__label">
-                            <input id="home" type="radio" name="nav" defaultChecked={home} />
-                            <FontAwesomeIcon icon={faHouse} />
-                    </label>
-                </NavLink>
-                <NavLink to='/budgets'>
-                    <label htmlFor="listApp" className="bottom-bar__label">
-                            <input id="listApp" type="radio" name="nav" defaultChecked={budgets} />
-                            <FontAwesomeIcon icon={faListUl} />
-                    </label>
-                </NavLink>
-                <NavLink to='/calendar'>
-                    <label htmlFor="calendar" className="bottom-bar__label">
-                            <input id="calendar" type="radio" name="nav" defaultChecked={calendar} />
-                            <FontAwesomeIcon icon={faCalendarDays} />
-                    </label>
-                </NavLink>
-                <NavLink to='/creditCards'>
-                    <label htmlFor="credit" className="bottom-bar__label">
-                            <input id="credit" type="radio" name="nav" defaultChecked={creditCards} />
-                            <FontAwesomeIcon icon={faCreditCardAlt} />
-                    </label>
-                </NavLink>
+                <div className="bottom-bar__buttons-group"> 
+                    <NavLink to='/' className="bottom-bar__buttons-link">
+                        <label htmlFor="home" className="bottom-bar__label">
+                                <input id="home" type="radio" name="nav" defaultChecked={home} />
+                                <FontAwesomeIcon icon={faHouse} />
+                        </label>
+                    </NavLink>
+                    <NavLink to='/budgets' className="bottom-bar__buttons-link">
+                        <label htmlFor="listApp" className="bottom-bar__label">
+                                <input id="listApp" type="radio" name="nav" defaultChecked={budgets} />
+                                <FontAwesomeIcon icon={faListUl} />
+                        </label>
+                    </NavLink>
+                </div>
+                <div className="bottom-bar__buttons-group"> 
+                    <NavLink to='/calendar'  className="bottom-bar__buttons-link">
+                        <label htmlFor="calendar" className="bottom-bar__label">
+                                <input id="calendar" type="radio" name="nav" defaultChecked={calendar} />
+                                <FontAwesomeIcon icon={faCalendarDays} />
+                        </label>
+                    </NavLink>
+                    <NavLink to='/creditCards' className="bottom-bar__buttons-link">
+                        <label htmlFor="credit" className="bottom-bar__label">
+                                <input id="credit" type="radio" name="nav" defaultChecked={creditCards} />
+                                <FontAwesomeIcon icon={faCreditCardAlt} />
+                        </label>
+                    </NavLink>
+                </div>
             </nav>
         </footer>
     )
