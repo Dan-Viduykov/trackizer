@@ -10,7 +10,7 @@ import HeaderTopMenu from "../../components/HeaderTopMenu";
 const HomeScreen: FC = () => {
     return (
         <main className="home shadow-screen">
-            <div className="wrap">
+            <section className="home__section section bookmark">
                 <HeaderTopMenu gear/>
                 <div className="home__counter">
                     <div className="home__total">
@@ -23,6 +23,8 @@ const HomeScreen: FC = () => {
                     </div>
                     <Statistics />
                 </div>
+            </section>
+            <section className="home__section section">
                 <div className="home__subs">
                     <div className="home__subs-modes">
                         <div className="home__subs-mode ft-1">Your subscriptions</div>
@@ -33,7 +35,7 @@ const HomeScreen: FC = () => {
                     </div>
                 </div>
                 <BottomBar home/>
-            </div>
+            </section>
         </main>
     )
 }
