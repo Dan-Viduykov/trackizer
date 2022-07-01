@@ -5,11 +5,13 @@ import Indicator from "./Indicator/Indicator";
 import Statistics from "./Statistics";
 import SubsList from "../../components/SubsList";
 import BottomBar from "../../components/BottomBar";
+import HeaderTopMenu from "../../components/HeaderTopMenu";
 
 const HomeScreen: FC = () => {
     return (
         <main className="home shadow-screen">
             <div className="wrap">
+                <HeaderTopMenu gear/>
                 <div className="home__counter">
                     <div className="home__total">
                         <div className="home__indicator">

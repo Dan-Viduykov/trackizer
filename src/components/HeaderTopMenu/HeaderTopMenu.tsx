@@ -9,10 +9,11 @@ interface HeaderTopMenuProps {
     trash?: boolean;
     gear?: boolean;
     title?: string;
+    classesNames?: string;
 }
 
 const HeaderTopMenu: FC<HeaderTopMenuProps> = (props) => {
-    const { angleLeft, title, trash, gear } = props;
+    const { angleLeft, title, trash, gear, classesNames } = props;
     const navigate = useNavigate()
 
     const buttonBack = (
@@ -38,9 +39,9 @@ const HeaderTopMenu: FC<HeaderTopMenuProps> = (props) => {
     )
     
     return (
-        <div className="top-menu">
+        <div className={`top-menu ${classesNames}`}>
             { angleLeft ? buttonBack : false }
-            { title ? <p className="top-menu__page-name ft-body-l">{props.title}</p> : false }
+            <p className="top-menu__page-name ft-body-l">{title}</p>
             { trash ? gear ? false : buttonTrash : gear ? ButtonGear : false }
         </div>
     )

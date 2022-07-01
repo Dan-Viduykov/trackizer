@@ -8,9 +8,9 @@ import cool from '../../assets/svg/cool.svg'
 
 const Budgets: FC = () => {
     return (
-        <div className="budgets wrap">
+        <main className="budgets wrap">
             <HeaderTopMenu title="Spending & Budgets" gear/>
-            <div className="budgets__indicator">
+            <section className="budgets__indicator book-mark">
                 <div className="budgets__lines">
                     <div className="budgets__line"></div>
                     <div className="budgets__line"></div>
@@ -18,7 +18,7 @@ const Budgets: FC = () => {
                 </div>
                 <p className="budgets__total ft-5">$82,97</p>
                 <p className="budgets__capital ft-body-s">of $2,000 budget</p>
-            </div>
+            </section>
             <p className="budgets__info">Your budgets are on track <img src={cool} alt="" /></p>
             <ul className="budgets__categories">
                 <li className="budgets__category category border">  
@@ -56,7 +56,7 @@ const Budgets: FC = () => {
             </ul>
             <button className="budgets__add ft-2">Add new category <FontAwesomeIcon icon={faPlusCircle} /></button>
             <BottomBar budgets />
-        </div>
+        </main>
     )
 }
 

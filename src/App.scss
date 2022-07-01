@@ -13,10 +13,7 @@
 }
 
 .wrap {
-    min-width: 100vw;
-    min-height: 100vh;
-    padding: 24px 24px 22px;
-    background-color: #0E0E12;
+    padding: 32px 24px 16px;
 }
 
 .logo-40 {
@@ -24,4 +21,10 @@
     height: 40px;
     background-color: $gray30;
     border-radius: 30%;
+}
+
+main {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: $gray80;
 }

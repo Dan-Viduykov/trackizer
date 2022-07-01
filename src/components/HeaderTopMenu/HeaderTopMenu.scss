@@ -1,8 +1,9 @@
 @import '../../sass/style.scss';
 
 .top-menu {
-    position: relative;
     color: $gray30;
+    position: relative;
+    margin-bottom: 44px;
 
     &__page-name {
         text-align: center;
