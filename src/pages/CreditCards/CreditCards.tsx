@@ -1,6 +1,6 @@
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { FC } from "react";
+import { FC } from "react";
 import BottomBar from "../../components/BottomBar";
 import HeaderTopMenu from "../../components/HeaderTopMenu";
 import './CreditCards.scss'
@@ -8,9 +8,9 @@ import './CreditCards.scss'
 const CreditCards: FC = () => {
 
     return (
-        <div className="credit-card">
+        <main className="credit-card section">
             <HeaderTopMenu title="Credit Cards" gear/>
-            <div className="credit-card__user-card user-card">
+            <section className="credit-card__user-card user-card">
                 <div className="user-card__type logo-40">
                     <img src="" alt="" />
                 </div>
@@ -31,8 +31,8 @@ const CreditCards: FC = () => {
                 </svg>
                 <div className="user-card__bc"></div>
                 <div className="user-card__bc"></div>
-            </div>
-            <div className="credit-card__subs">
+            </section>
+            <section className="credit-card__subs">
                 <p className="credit-card__title ft-3">Subscriptions</p>
                 <ul className="credit-card__subs-list">
                     <li className="credit-card__sub logo-40">
@@ -48,12 +48,12 @@ const CreditCards: FC = () => {
                         <img src="" alt="" />
                     </li>
                 </ul>
-            </div>
-            <div className="credit-card__bottom">
+            </section>
+            <section className="credit-card__footer bookmark bookmark--reverse">
                 <button className="credit-card__add ft-2"><span>Add new Card</span><FontAwesomeIcon icon={faPlusCircle} /></button>
                 <BottomBar creditCards />
-            </div>
-        </div>
+            </section>
+        </main>
     )
 }
 

@@ -8,9 +8,9 @@ import cool from '../../assets/svg/cool.svg'
 
 const Budgets: FC = () => {
     return (
-        <main className="budgets wrap">
+        <main className="budgets section">
             <HeaderTopMenu title="Spending & Budgets" gear/>
-            <section className="budgets__indicator book-mark">
+            <section className="budgets__indicator">
                 <div className="budgets__lines">
                     <div className="budgets__line"></div>
                     <div className="budgets__line"></div>

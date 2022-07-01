@@ -1,10 +1,6 @@
 @import '../../sass/style.scss';
 
 .credit-card {
-    min-height: 100vh;
-    padding: 24px;
-    background-color: $gray80;
-
     &__user-card {
         margin: 42px auto 50px;
     }
@@ -31,14 +27,13 @@
         }
     }
 
-    &__bottom {
+    &__footer {
         width: 100%;
-        position: absolute;
+        padding: 24px;
+        padding-bottom: 110px;
+        position: fixed;
         bottom: 0;
         left: 0;
-        padding: 24px 24px 110px;
-        background-color: $gray70;
-        border-radius: 24px 24px 0 0;
     }
 
     &__add {
@@ -93,17 +88,11 @@
         margin-bottom: 90px;
     }
 
-    &__name {
+    &__name {}
 
-    }
+    &__card-number {}
 
-    &__card-number {
-
-    }
-
-    &__date {
-
-    }
+    &__date {}
 
     &__chip {
         margin: 0 auto;
@@ -117,9 +106,7 @@
         overflow: hidden;
     }
     
-    &__circle-big {
-    }
+    &__circle-big {}
     
-    &__circle-small {
-    }
+    &__circle-small {}
 }

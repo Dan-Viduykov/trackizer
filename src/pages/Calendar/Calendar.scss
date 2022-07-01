@@ -7,32 +7,27 @@
     height: 100%;
     background-color: $gray80;
 
-    &__top {
-        padding: 32px 24px;
-        background-color: $gray70;
-        border-radius: 0px 0px 24px 24px;
-    }
-
     &__title {
         margin: 42px 0 16px;
+        color: $white;
     }
 
-    &__select {
+    &__choose {
         margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-        &::before {
-            content: '3 subscriptions for today';
-            margin-right: auto;
-            font-weight: 600;
-            font-size: 14px;
-            line-height: 20px;
+        p {
             color: $gray30;
         }
     }
 
-    &__carousel {
-        
+    &__select {
+        background: rgba(255, 255, 255, 0.1);   
     }
+
+    &__carousel {}
 
     &__list {
         display: flex;
@@ -65,13 +60,9 @@
         }
     }
 
-    &__item-date {
+    &__item-date {}
 
-    }
-
-    &__subs {
-        padding: 24px;
-    }
+    &__subs {}
 
     &__period {
         margin-bottom: 24px;
@@ -95,6 +86,7 @@
     &__total-price {
         display: flex;
         flex-direction: column;
+        text-align: end;
 
         &::after {
             content: 'in upcoming bills';
@@ -122,14 +114,11 @@
         justify-content: space-between;
     }
 
-    &__sub-logo {
-    }
+    &__sub-logo {}
 
     &__sub-title {
         margin-top: auto;
-    }
+    } 
 
-    &__sub-price {
-
-    }
+    &__sub-price {}
 }

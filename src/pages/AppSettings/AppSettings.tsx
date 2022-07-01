@@ -8,20 +8,16 @@ import "antd/dist/antd.css";
 
 import Button from "../../components/Button";
 import HeaderTopMenu from "../../components/HeaderTopMenu";
-import { useAppDispatch, useAppSelector } from "../../core/hooks/redux";
-import { UserSlice } from "../../core/store/reducers/userReducer";
+import { useAppSelector } from "../../core/hooks/redux";
 
 const AppSettings: FC = () => {
 
     const { name, mail } = useAppSelector(state => state.userReducer);
     const { sorting, theme, fontSize } = useAppSelector(state => state.appSettingsReducer)
-
-    const { changeName } = UserSlice.actions;
-    const dispatch = useAppDispatch();
     
     return (
-        <div className="settings wrap">
-            <div className="settings__header">
+        <main className="settings section">
+            <section className="settings__header">
                 <HeaderTopMenu angleLeft title="Settings" />
                 <div className="settings__user">
                     <div className="settings__img">
@@ -31,7 +27,7 @@ const AppSettings: FC = () => {
                     <p className="settings__mail ft-body-s" >{mail}</p>
                     <Button className="settings__btn-edit" type="submit" btnType="Secondary" >Edit profile</Button>
                 </div>
-            </div>
+            </section>
             <ul className="settings__category">
                 <li className="settings__category-item">
                     <h4 className="settings__category-title ft-2" >My subscriptions</h4>
@@ -59,7 +55,7 @@ const AppSettings: FC = () => {
                     </ul>
                 </li>
             </ul>
-        </div>
+        </main>
     )
 }
 
