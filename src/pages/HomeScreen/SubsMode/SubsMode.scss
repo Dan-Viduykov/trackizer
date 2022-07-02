@@ -1,0 +1,25 @@
+@import '../../../sass/style.scss';
+
+.subs-mode {
+    padding: 7px 9px;
+    margin-bottom: 16px;
+    background-color: $gray100;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+
+    input {
+        display: none;
+    }
+
+    input[type="radio"]:checked + label {
+        background: rgba(78, 78, 97, 0.2);
+    }
+}
+
+.subs-mode__item {
+    padding: 10px 23px;
+    border-radius: 16px;
+    position: relative;    
+}
+

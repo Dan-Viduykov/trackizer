@@ -60,20 +60,4 @@
     }
 
     &__subs {}
-
-    &__subs-modes {
-        padding: 7px 9px;
-        margin-bottom: 16px;
-        background-color: $gray100;
-        border-radius: 16px;
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    &__subs-mode {
-        padding: 10px 23px;
-        background: rgba(78, 78, 97, 0.2);
-        border-radius: 16px;
-    }
-
 }

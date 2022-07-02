@@ -6,6 +6,7 @@ import Statistics from "./Statistics";
 import SubsList from "../../components/SubsList";
 import BottomBar from "../../components/BottomBar";
 import HeaderTopMenu from "../../components/HeaderTopMenu";
+import SubsMode from "./SubsMode";
 
 const HomeScreen: FC = () => {
     return (
@@ -26,10 +27,7 @@ const HomeScreen: FC = () => {
             </section>
             <section className="home__section section">
                 <div className="home__subs">
-                    <div className="home__subs-modes">
-                        <div className="home__subs-mode ft-1">Your subscriptions</div>
-                        <div className="home__subs-mode ft-1">Upcoming bills</div>
-                    </div>
+                    <SubsMode />
                     <div className="home__subs-list">
                         <SubsList />
                     </div>

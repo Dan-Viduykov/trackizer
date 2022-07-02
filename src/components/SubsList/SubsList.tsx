@@ -10,16 +10,28 @@ interface SubsListProps {
 }
 
 const SubsList: FC<SubsListProps> = ({ typeList }) => {
+    const { subscriptions, logoMode } = useAppSelector(state => state.appReducer);
     const uniqid = require('uniqid'); 
-    const { subscriptions } = useAppSelector(state => state.appReducer);
     
     const items = (subs: ISub[]) => subs.map((sub: ISub) => {
         const { name, price } = sub;
 
+        const logoImg = (
+            <div className="subscription__img">
+                <img src="" alt="" />
+            </div>
+        )
+        const logoDate = (
+            <div className="subscription__date">
+                <p className="ft-body-s">Jun</p>
+                <p className="ft-2">25</p>
+            </div>
+        )      
+
         return (
             <li className="subs__item subscription" key={uniqid()}>
                 <Link className="subscription__link" to='/sub-info'>
-                    <div className="subscription__img"><img src="" alt="" /></div>
+                    {logoMode === 'imgs' ? logoImg : logoDate}
                     <p className="subscription__name ft-2">{name}</p>
                     <p className={`subscription__price ${typeList ? 'ft-4' : 'ft-2'}`}>${price}</p>
                 </Link>

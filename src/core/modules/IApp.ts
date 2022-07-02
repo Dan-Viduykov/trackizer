@@ -2,6 +2,7 @@ export interface AppState {
     subscriptions: ISub[];
     moneyLimit: number;
     moneySpent: number;
+    logoMode: 'imgs' | 'dates';
 }
 
 export interface ISub {

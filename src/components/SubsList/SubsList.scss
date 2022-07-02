@@ -37,9 +37,7 @@
     }
 }
 
-.subscription {
-    
-    
+.subscription {    
     &__link {
         padding: 12px;
         display: flex;
@@ -57,6 +55,21 @@
         margin-right: 15px;
         background: $gray40;
         border-radius: 12px;
+    }
+
+    &__date {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+        background: $gray70;
+        border-radius: 12px;
+        color: $gray30;
+        text-align: center;
+        
+        p:first-child {
+            font-size: 10px;
+            margin: 4px 0 -4px;
+        }
     }
     
     &__name {

@@ -55,7 +55,8 @@ const initialState: AppState = {
         }
     ],
     moneyLimit: 1800,
-    moneySpent: 1200
+    moneySpent: 1200,
+    logoMode: 'imgs'
 }
 
 export const AppSlice = createSlice({
@@ -64,6 +65,9 @@ export const AppSlice = createSlice({
     reducers: {
         addSub(state, action: PayloadAction<ISub>) {
             state.subscriptions = Object.assign({}, state.subscriptions, action.payload);
+        },
+        changeMode(state, action: PayloadAction<'imgs' | 'dates'>) {
+            state.logoMode = action.payload;
         }
     }
 })
