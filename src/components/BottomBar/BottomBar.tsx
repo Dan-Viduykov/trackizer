@@ -6,7 +6,7 @@ import { faCalendarDays, faHouse, faListUl, faPlus } from "@fortawesome/free-sol
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import bg from '../../assets/svg/bottom-bar.svg'
 
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 interface BottomBarProps {
     home?: boolean;
@@ -21,7 +21,9 @@ const BottomBar: FC<BottomBarProps> = (props) => {
     return (
         <footer className="bottom-bar">
             <img src={bg} alt="" />
-            <button className="bottom-bar__add-sub"><FontAwesomeIcon icon={faPlus}/></button>
+            <Link to='/sub-new' className="bottom-bar__add-sub">
+                <FontAwesomeIcon className="bottom-bar__plus" icon={faPlus}/>
+            </Link>
             <nav className="bottom-bar__buttons">
                 <div className="bottom-bar__buttons-group"> 
                     <NavLink to='/' className="bottom-bar__buttons-link">

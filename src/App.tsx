@@ -6,6 +6,7 @@ import Budgets from "./pages/Budgets";
 import Calendar from "./pages/Calendar";
 import CreditCards from "./pages/CreditCards";
 import HomeScreen from "./pages/HomeScreen";
+import NewSubscription from "./pages/NewSubscription";
 import SubscriptionInfo from "./pages/SubscriptionInfo";
 
 const App: FC = () => {
@@ -19,6 +20,7 @@ const App: FC = () => {
                 <Route path="/creditCards" element={<CreditCards />}/>
                 <Route path="/settings" element={<AppSettings />}/>
                 <Route path="/sub-info" element={<SubscriptionInfo />}/>
+                <Route path="/sub-new" element={<NewSubscription />}/>
             </Routes>
         </div>
     )

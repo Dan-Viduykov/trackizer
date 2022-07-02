@@ -10,8 +10,8 @@ import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const NewSubscription: FC = () => {
     return (
-        <div className="new-sub wrap">
-            <div className="new-sub__choose">
+        <main className="new-sub">
+            <section className="new-sub__choose section bookmark">
                 <HeaderTopMenu angleLeft title="New" />
                 <h3 className="new-sub__title ft-7">Add new subscription</h3>
                 <Carousel dots={false}>
@@ -20,18 +20,20 @@ const NewSubscription: FC = () => {
                     <div className="new-sub__item"><img className="img" src="#" alt="logo"></img></div>
                 </Carousel>
                 <div className="new-sub__sub-name ft-2">HGBO GO</div>             
-            </div>
-            <div className="new-sub__description">
-                <p className="ft-body-s">Description</p>
-                <input className="ft-2 input" type="text" />
-            </div>
-            <div className="new-sub__price">
-                <button className="new-sub__price-btn border"><FontAwesomeIcon icon={faMinus} /></button>
-                <p className="new-sub__choose-price ft-5">$5.99</p>
-                <button className="new-sub__price-btn border"><FontAwesomeIcon icon={faPlus} /></button>
-            </div>
-            <Button className="new-sub__btn-save" type="submit" btnType="Primary">Add this platform</Button>
-        </div>
+            </section>
+            <section className="section">
+                <div className="new-sub__description">
+                    <p className="ft-body-s">Description</p>
+                    <input className="ft-2 input" type="text" />
+                </div>
+                <div className="new-sub__price">
+                    <button className="new-sub__price-btn border"><FontAwesomeIcon icon={faMinus} /></button>
+                    <p className="new-sub__choose-price ft-5">$5.99</p>
+                    <button className="new-sub__price-btn border"><FontAwesomeIcon icon={faPlus} /></button>
+                </div>
+                <Button className="new-sub__btn-save" type="submit" btnType="Primary">Add this platform</Button>
+            </section>
+        </main>
     )
 }
 
