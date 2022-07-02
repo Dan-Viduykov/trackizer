@@ -1,0 +1,91 @@
+@import '../../../sass/style.scss';
+
+.sub-form {
+    &__description {
+        margin-bottom: 24px;
+        padding: 24px;
+    
+        p {
+            margin-bottom: 4px;
+            color: $gray50;
+            text-align: center;
+        }   
+    }
+
+    &__price {
+        margin-bottom: 40px;
+        padding: 0 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__btn {
+        width: 48px;
+        height: 48px;
+        position: relative;
+        background-color: $gray70;
+        border: none;
+        border-radius: 30%;
+        font-size: 24px;
+        color: $gray60;
+    }
+    
+    &__value {
+        width: 40%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid $gray70; 
+        text-align: center;
+        color: $white;
+        position: relative;
+
+    
+        &::before {
+            content: 'Mothly price';
+            width: 100px;
+            position: absolute;
+            left: -12px;
+            top: -16px; 
+            text-align: center;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 16px;
+            color: #83839C;
+        }
+    
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: -45px;
+            width: 160px;
+            height: 2px;
+            background-color: $gray70;
+        }
+    }
+    
+    &__btn-save {
+        width: calc(100% - 48px);
+        margin: 55px auto 0;
+        padding: 14px 12px;
+
+        background: radial-gradient(100% 100% at 50% 100%, rgba(255, 255, 255, 0) 43.25%, rgba(255, 127, 55, 0.5) 100%), #FF7966;
+        box-shadow: 0px 8px 25px rgba(255, 121, 102, 0.5);
+        border: none;
+        border-radius: 100px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        font-family: 'Inter';
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        color: $white;
+        
+        position: relative;
+    }
+}

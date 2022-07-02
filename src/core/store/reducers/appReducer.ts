@@ -64,7 +64,7 @@ export const AppSlice = createSlice({
     initialState,
     reducers: {
         addSub(state, action: PayloadAction<ISub>) {
-            state.subscriptions = Object.assign({}, state.subscriptions, action.payload);
+            state.subscriptions = [...state.subscriptions, action.payload];
         },
         changeMode(state, action: PayloadAction<'imgs' | 'dates'>) {
             state.logoMode = action.payload;
