@@ -30,7 +30,7 @@ const SubsList: FC<SubsListProps> = ({ typeList }) => {
 
         return (
             <li className="subs__item subscription" key={uniqid()}>
-                <Link className="subscription__link" to='/sub-info'>
+                <Link className="subscription__link" to={`/sub-info/${name}`} >
                     {logoMode === 'imgs' ? logoImg : logoDate}
                     <p className="subscription__name ft-2">{name}</p>
                     <p className={`subscription__price ${typeList ? 'ft-4' : 'ft-2'}`}>${price}</p>

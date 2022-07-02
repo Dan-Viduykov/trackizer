@@ -8,11 +8,15 @@ import Button from "../../components/Button";
 import HeaderTopMenu from "../../components/HeaderTopMenu";
 
 import { useAppSelector } from "../../core/hooks/redux";
+import { useParams } from "react-router-dom";
 
 const SubscriptionInfo: FC = () => {
+    const { subscriptions } = useAppSelector(state => state.appReducer)
+    const params = useParams();
 
-    const { name, description, category, firstPayment, currency  } = useAppSelector(state => state.appReducer.subscriptions[0])
-    
+    const idx = subscriptions.findIndex(sub => sub.name === params.title)
+    const { name, description, category, firstPayment, currency, price  } = subscriptions[idx]
+
     return (
         <div className="sub">
             <div className="sub__header">
@@ -20,8 +24,8 @@ const SubscriptionInfo: FC = () => {
                 <div className="sub__img">
                     <img src="" alt="" />
                 </div>
-                <h2 className="sub__title ft-6">Spotify</h2>
-                <p className="sub__price ft-4">$5.99</p>
+                <h2 className="sub__title ft-6">{name}</h2>
+                <p className="sub__price ft-4">${price}</p>
             </div>
             <div className="sub__info">
                 <ul className="sub__settings border">

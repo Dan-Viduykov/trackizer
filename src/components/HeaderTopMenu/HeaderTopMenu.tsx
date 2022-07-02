@@ -1,6 +1,6 @@
 import { faAngleLeft, faTrashCan, faGear } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { FC } from "react";
+import { FC } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import './HeaderTopMenu.scss'
 
