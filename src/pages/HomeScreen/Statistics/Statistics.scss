@@ -10,10 +10,18 @@
         border-radius: 16px;
         position: relative;
     
-        &::before {
+        &::after {
+            content: '';
+            width: 50%;
+            height: 1px;
             position: absolute;
             top: 0;
+            left: 25%;
         }
+
+        &:nth-child(1)::after { background: $accent-p50; }
+        &:nth-child(2)::after { background: $primary-10; }
+        &:nth-child(3)::after { background: $accent-s50; }
     }
     
     &__name {
