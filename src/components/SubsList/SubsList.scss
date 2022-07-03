@@ -1,7 +1,6 @@
 @import '../../sass/style.scss';
 
 .subs {
-
     &__item {
         margin-bottom: 8px;
 
@@ -48,30 +47,27 @@
     }
 
     &--flex {
-        & .subs__item {
-            max-width: 165px;
-            min-height: 165px;
-        }
-
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
 
         & .subs__item {
             width: 100%;
+            max-width: 165px;
+            min-height: 165px;
             
-            &__link {
+            &-link {
                 height: 100%;
                 padding: 16px;
                 flex-direction: column;
-                align-items: start;
+                align-items: flex-start;
             }
 
-            &__img {
+            &-img {
                 margin-bottom: auto;
             }
 
-            &__name {
+            &-name {
                 margin: 10px 0 5px;
             }
         }

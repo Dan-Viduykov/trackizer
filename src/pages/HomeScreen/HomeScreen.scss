@@ -54,9 +54,10 @@
         padding: 8px 12px;
         border: none;
         border-radius: 100px;
-        position: relative;
         background: rgba(255, 255, 255, 0.1);
         color: $white;
+        display: inline-block;
+        position: relative;
     }
 
     &__subs {}
