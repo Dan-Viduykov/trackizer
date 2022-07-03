@@ -1,7 +1,10 @@
 import { ISub } from './../../modules/IApp';
+import { AppState } from "../../modules/IApp";
+
 import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
-import { AppState } from "../../modules/IApp"
+
+const uniqid = require('uniqid'); 
 
 const initialState: AppState = {
     subscriptions: [
@@ -9,50 +12,29 @@ const initialState: AppState = {
             name: 'Spotify',
             description: 'Music app',
             category: 'Enterteintment',
-            firstPayment: `${new Date('8 1 2022').getMonth() + 1}.${new Date('8 1 2022').getDate()}.${new Date('8 1 2022').getFullYear()}`,
+            firstPayment: `${new Date().getMonth() + 1}.${new Date().getDate()}.${new Date().getFullYear()}`,
             currency: 'USD ($)',
             price: 5.99,
+            id: uniqid(),
         },
         {
             name: 'Microsoft OneDrive',
             description: 'Cloud',
             category: 'cloud',
-            firstPayment: `${new Date('8 1 2022').getMonth() + 1}.${new Date('8 1 2022').getDate()}.${new Date('8 1 2022').getFullYear()}`,
+            firstPayment: `${new Date().getMonth() + 1}.${new Date().getDate()}.${new Date().getFullYear()}`,
             currency: 'USD ($)',
             price: 25.99,
+            id: uniqid(),
         },
         {
             name: 'YouTube Premium',
             description: 'Video app',
             category: 'Enterteintment',
-            firstPayment: `${new Date('8 1 2022').getDate()} ${new Date('8 1 2022').getMonth()} ${new Date('8 1 2022').getFullYear()}`,
+            firstPayment: `${new Date().getDate()} ${new Date().getMonth()} ${new Date().getFullYear()}`,
             currency: 'USD ($)',
             price: 15.99,
+            id: uniqid(),
         },
-        {
-            name: 'Spotify',
-            description: 'Music app',
-            category: 'Enterteintment',
-            firstPayment: `${new Date('8 1 2022').getMonth() + 1}.${new Date('8 1 2022').getDate()}.${new Date('8 1 2022').getFullYear()}`,
-            currency: 'USD ($)',
-            price: 5.99,
-        },
-        {
-            name: 'Microsoft OneDrive',
-            description: 'Cloud',
-            category: 'cloud',
-            firstPayment: `${new Date('8 1 2022').getMonth() + 1}.${new Date('8 1 2022').getDate()}.${new Date('8 1 2022').getFullYear()}`,
-            currency: 'USD ($)',
-            price: 25.99,
-        },
-        {
-            name: 'YouTube Premium',
-            description: 'Video app',
-            category: 'Enterteintment',
-            firstPayment: `${new Date('8 1 2022').getDate()} ${new Date('8 1 2022').getMonth()} ${new Date('8 1 2022').getFullYear()}`,
-            currency: 'USD ($)',
-            price: 15.99,
-        }
     ],
     moneyLimit: 1800,
     moneySpent: 1200,
@@ -63,8 +45,12 @@ export const AppSlice = createSlice({
     name: 'app',
     initialState,
     reducers: {
-        addSub(state, action: PayloadAction<ISub>) {
+        addSubscription(state, action: PayloadAction<ISub>) {
             state.subscriptions = [...state.subscriptions, action.payload];
+        },
+        deleteSubscription(state, action: PayloadAction<string>) {
+            state.subscriptions = state.subscriptions.filter(sub => sub.id !== action.payload);
+            console.log(state.subscriptions);
         },
         changeMode(state, action: PayloadAction<'imgs' | 'dates'>) {
             state.logoMode = action.payload;

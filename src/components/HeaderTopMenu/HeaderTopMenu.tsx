@@ -1,12 +1,16 @@
+import { FC } from "react";
+import './HeaderTopMenu.scss'
+
 import { faAngleLeft, faTrashCan, faGear } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FC } from "react";
+
 import { NavLink, useNavigate } from "react-router-dom";
-import './HeaderTopMenu.scss'
+import { useAppDispatch } from "../../core/hooks/redux";
+import { AppSlice } from "../../core/store/reducers/appReducer";
 
 interface HeaderTopMenuProps {
     angleLeft?: boolean;
-    trash?: boolean;
+    trash?: string;
     gear?: boolean;
     title?: string;
     classesNames?: string;
@@ -14,7 +18,10 @@ interface HeaderTopMenuProps {
 
 const HeaderTopMenu: FC<HeaderTopMenuProps> = (props) => {
     const { angleLeft, title, trash, gear, classesNames } = props;
-    const navigate = useNavigate()
+
+    const navigate = useNavigate();
+    const dispatch = useAppDispatch();
+    const { deleteSubscription } = AppSlice.actions
 
     const buttonBack = (
         <button
@@ -32,8 +39,15 @@ const HeaderTopMenu: FC<HeaderTopMenuProps> = (props) => {
         </NavLink>
     );
 
+    const trashSubscription = () => {
+        navigate('/')
+        dispatch(deleteSubscription(trash!));
+    } 
+
     const buttonTrash = (
-        <button className="top-menu__btn top-menu__btn--right">
+        <button
+            className="top-menu__btn top-menu__btn--right"
+            onClick={trashSubscription} >
             <FontAwesomeIcon icon={faTrashCan} />
         </button>
     )

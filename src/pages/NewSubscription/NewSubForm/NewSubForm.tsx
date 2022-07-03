@@ -12,10 +12,12 @@ import { useNavigate } from "react-router-dom";
 const NewSubForm: FC = () => {
     const [ valuePrice, setValuePrice ] = useState('9.99');
     const [ valueDescription, setValueDescription ] = useState('');
+    
     const navigate = useNavigate()
-
     const dispatch = useAppDispatch()
-    const { addSub } = AppSlice.actions
+    const uniqid = require('uniqid'); 
+
+    const { addSubscription } = AppSlice.actions
 
     const onChangePrice = (event: ChangeEvent<HTMLInputElement>) => {
         setValuePrice(event.target.value)
@@ -35,9 +37,10 @@ const NewSubForm: FC = () => {
             firstPayment: date,
             currency: 'USD ($)',
             price: Number(valuePrice),
+            id: uniqid(),
         }
 
-        dispatch(addSub(newSub))
+        dispatch(addSubscription(newSub))
         navigate('/')
     }
 
@@ -57,7 +60,8 @@ const NewSubForm: FC = () => {
                 <input
                     className="sub-form__value ft-5"
                     value={valuePrice}
-                    onChange={onChangePrice} />
+                    onChange={onChangePrice}
+                    type='number' />
                 <button className="sub-form__btn border" >
                     <FontAwesomeIcon icon={faPlus} />
                 </button>

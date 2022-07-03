@@ -55,7 +55,7 @@ main {
 
 .shadow-screen {
     padding-bottom: 70px;
-
+    
     &::after {
         content: '';
         position: fixed;
@@ -63,5 +63,6 @@ main {
         width: 100%;
         height: 150px;
         background: linear-gradient(180deg, rgba(28, 28, 35, 0) 0%, #1C1C23 59.21%);
+        pointer-events: none;
     }
 }

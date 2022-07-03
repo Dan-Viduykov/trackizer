@@ -12,4 +12,5 @@ export interface ISub {
     firstPayment: string;
     currency: string;
     price: number;
+    id: string;
 }

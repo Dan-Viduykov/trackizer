@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { useAppSelector } from "../../../core/hooks/redux";
 import './Statistics.scss'
+import { useAppSelector } from "../../../core/hooks/redux";
 
 const Statistics: FC = () => {
     const { subscriptions } = useAppSelector(state => state.appReducer);
@@ -17,11 +17,11 @@ const Statistics: FC = () => {
             </div>
             <div className="statistic__item border">
                 <p className="statistic__name ft-1">Highest subs</p>
-                <p className="statistic__info ft-2">{highestSubs}</p>
+                <p className="statistic__info ft-2">{subscriptions ? highestSubs : 0}</p>
             </div>
             <div className="statistic__item border">
                 <p className="statistic__name ft-1">Lowest subs</p>
-                <p className="statistic__info ft-2">{lowestSubs}</p>
+                <p className="statistic__info ft-2">{subscriptions ? lowestSubs : 0}</p>
             </div>
         </section>
     )

@@ -1,11 +1,14 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import './HomeScreen.scss'
+
 import logo from '../../assets/svg/logo.svg'
 import Indicator from "./Indicator/Indicator";
 import Statistics from "./Statistics";
+
 import SubsList from "../../components/SubsList";
 import BottomBar from "../../components/BottomBar";
 import HeaderTopMenu from "../../components/HeaderTopMenu";
+
 import SubsMode from "./SubsMode";
 
 const HomeScreen: FC = () => {
