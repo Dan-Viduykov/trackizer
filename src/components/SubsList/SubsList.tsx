@@ -16,23 +16,23 @@ const SubsList: FC<SubsListProps> = ({ typeList }) => {
         const { name, price, id } = sub;
 
         const logoImg = (
-            <div className="subscription__img">
+            <div className="subs__item-img">
                 <img src="" alt="" />
             </div>
         )
         const logoDate = (
-            <div className="subscription__date">
+            <div className="subs__item-date">
                 <p className="ft-body-s">Jun</p>
                 <p className="ft-2">25</p>
             </div>
         ) 
 
         return (
-            <li className="subs__item subscription" key={id}>
-                <Link className="subscription__link" to={`/sub-info/${name}`} >
+            <li className="subs__item" key={id}>
+                <Link className="subs__item-link" to={`/sub-info/${name}`} >
                     {logoMode === 'imgs' ? logoImg : logoDate}
-                    <p className="subscription__name ft-2">{name}</p>
-                    <p className={`subscription__price ${typeList ? 'ft-4' : 'ft-2'}`}>${price}</p>
+                    <p className="subs__item-name ft-2">{name}</p>
+                    <p className={`subs__item-price ${typeList ? 'ft-4' : 'ft-2'}`}>${price}</p>
                 </Link>
             </li>
         )

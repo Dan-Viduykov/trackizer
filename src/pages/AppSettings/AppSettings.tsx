@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import './AppSettings.scss'
 
 import { faAngleRight, faArrowDownShortWide, faSpellCheck } from "@fortawesome/free-solid-svg-icons";

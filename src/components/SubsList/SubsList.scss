@@ -4,6 +4,47 @@
 
     &__item {
         margin-bottom: 8px;
+
+        &-link {
+            width: 100%;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid $gray70;
+            border-radius: 16px;
+            color: inherit;
+            text-decoration: none;
+        }
+    
+        &-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            background: $gray40;
+            border-radius: 12px;
+        }
+    
+        &-date {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            background: $gray70;
+            border-radius: 12px;
+            color: $gray30;
+            text-align: center;
+            
+            p:first-child {
+                font-size: 10px;
+                margin: 4px 0 -4px;
+            }
+        }
+        
+        &-name {
+            margin-right: auto;
+        }
+        
+        &-price {}
     }
 
     &--flex {
@@ -16,7 +57,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
 
-        & .subscription {
+        & .subs__item {
             width: 100%;
             
             &__link {
@@ -35,46 +76,4 @@
             }
         }
     }
-}
-
-.subscription {    
-    &__link {
-        padding: 12px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border: 1px solid $gray70;
-        border-radius: 16px;
-        color: inherit;
-        text-decoration: none;
-    }
-
-    &__img {
-        width: 40px;
-        height: 40px;
-        margin-right: 15px;
-        background: $gray40;
-        border-radius: 12px;
-    }
-
-    &__date {
-        width: 40px;
-        height: 40px;
-        margin-right: 15px;
-        background: $gray70;
-        border-radius: 12px;
-        color: $gray30;
-        text-align: center;
-        
-        p:first-child {
-            font-size: 10px;
-            margin: 4px 0 -4px;
-        }
-    }
-    
-    &__name {
-        margin-right: auto;
-    }
-    
-    &__price {}
 }

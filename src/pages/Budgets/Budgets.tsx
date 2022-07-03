@@ -1,16 +1,19 @@
+import { FC } from "react";
+import './Budgets.scss';
+
 import { faAutomobile, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { FC } from "react";
+
 import BottomBar from "../../components/BottomBar";
 import HeaderTopMenu from "../../components/HeaderTopMenu";
-import './Budgets.scss'
+
 import cool from '../../assets/svg/cool.svg'
 
 const Budgets: FC = () => {
     return (
         <main className="budgets section">
-            <HeaderTopMenu title="Spending & Budgets" gear/>
             <section className="budgets__indicator">
+                <HeaderTopMenu title="Spending & Budgets" gear/>
                 <div className="budgets__lines">
                     <div className="budgets__line"></div>
                     <div className="budgets__line"></div>
