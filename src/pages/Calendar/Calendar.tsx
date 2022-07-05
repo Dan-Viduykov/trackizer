@@ -1,14 +1,19 @@
-import { Select } from "antd";
-import { FC } from "react";
+import { FC, useState } from "react";
+import './Calendar.scss'
 
 import BottomBar from "../../components/BottomBar";
 import HeaderTopMenu from "../../components/HeaderTopMenu";
 import SubsList from "../../components/SubsList";
 
-import './Calendar.scss'
+import { Select } from "antd";
 import 'antd/dist/antd.css';
+const { Option } = Select;
 
 const Calendar: FC = () => {
+    const [ selected, setSelected ] = useState<string | null>(null)
+
+    const handleChange = (value: string) => setSelected;
+
     return (
         <main className="calendar shadow-screen">
             <section className="calendar__top section bookmark">
@@ -16,7 +21,24 @@ const Calendar: FC = () => {
                 <h2 className="calendar__title ft-7">Subs<br />Schedule</h2>
                 <div className="calendar__choose">
                     <p className="ft-2">3 subscriptions for today</p>
-                    <Select className="calendar__select" defaultValue={'january'}></Select>
+                    <Select
+                        className="calendar__select"
+                        style={{borderRadius: '32px'}}
+                        defaultValue="January"
+                        onChange={handleChange} >
+                        <Option value="January">January</Option>
+                        <Option value="February">February</Option>
+                        <Option value="March">March</Option>
+                        <Option value="April">April</Option>
+                        <Option value="May">May</Option>
+                        <Option value="June">June</Option>
+                        <Option value="July">July</Option>
+                        <Option value="August">August</Option>
+                        <Option value="September">September</Option>
+                        <Option value="October">October</Option>
+                        <Option value="November">November</Option>
+                        <Option value="December ">December </Option>
+                    </Select>
                 </div>
                 <div className="calendar__carousel">
                     <ul className="calendar__list">
