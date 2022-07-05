@@ -11,7 +11,7 @@ interface SubMainProps {
 }
 
 const SubMain: FC<SubMainProps> = ({ idx }) => {
-    const { name, description, category, firstPayment, currency } = useAppSelector(state => state.appReducer.subscriptions[idx]);
+    const { name, description, category, datePayment, currency } = useAppSelector(state => state.appReducer.subscriptions[idx]);
     
     return (
         <section className="sub-info">
@@ -29,8 +29,8 @@ const SubMain: FC<SubMainProps> = ({ idx }) => {
                     <p className="sub-settings__description ft-body-s"> {category} <FontAwesomeIcon icon={faAngleRight} /></p>
                 </li>
                 <li className="sub-settings__item" key={103}>
-                    <p className="sub-settings__name ft-2">First payment</p>
-                    <p className="sub-settings__description ft-body-s">{firstPayment} <FontAwesomeIcon icon={faAngleRight} /></p>
+                    <p className="sub-settings__name ft-2">Date payment</p>
+                    <p className="sub-settings__description ft-body-s">{datePayment} <FontAwesomeIcon icon={faAngleRight} /></p>
                 </li>
                 <li className="sub-settings__item" key={104}>
                     <p className="sub-settings__name ft-2">Currency</p>

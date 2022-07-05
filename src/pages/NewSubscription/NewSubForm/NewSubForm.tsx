@@ -8,10 +8,12 @@ import { useAppDispatch } from "../../../core/hooks/redux";
 import { AppSlice } from "../../../core/store/reducers/appReducer";
 import { ISub } from "../../../core/modules/IApp";
 import { useNavigate } from "react-router-dom";
+import { DatePicker } from "antd";
 
 const NewSubForm: FC = () => {
     const [ valuePrice, setValuePrice ] = useState('9.99');
     const [ valueDescription, setValueDescription ] = useState('');
+    const [ valueDate, setValueDate ] = useState('')
     
     const navigate = useNavigate()
     const dispatch = useAppDispatch()
@@ -25,16 +27,18 @@ const NewSubForm: FC = () => {
     const onChangeDescription = (event: ChangeEvent<HTMLInputElement>) => {
         setValueDescription(event.target.value)
     }
+    const onChangeDate = (date: any, dateString: string) => {
+        setValueDate(dateString)
+    }
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const date = `${new Date().getMonth() + 1}.${new Date().getDate()}.${new Date().getFullYear()}`;
         const newSub: ISub = {
             name: valueDescription,
             description: valueDescription,
             category: valueDescription,
-            firstPayment: date,
+            datePayment: valueDate,
             currency: 'USD ($)',
             price: Number(valuePrice),
             id: uniqid(),
@@ -46,12 +50,17 @@ const NewSubForm: FC = () => {
 
     return (
         <form className="sub-form" onSubmit={handleSubmit}>
-            <fieldset className="sub-form__description">
-                <p className="ft-body-s">Description</p>
+            <fieldset className="sub-form__info">
+                <label htmlFor="sub-description" className="ft-body-s">Description</label>
                 <input
-                    className="ft-2 input"
+                    id="sub-description"
+                    className="sub-form__description ft-2 input"
                     value={valueDescription}
                     onChange={onChangeDescription} />
+                <DatePicker
+                    placeholder="date payment"
+                    onChange={onChangeDate}
+                    className="sub-form__date" />
             </fieldset>
             <fieldset className="sub-form__price">
                 <button className="sub-form__btn border" >

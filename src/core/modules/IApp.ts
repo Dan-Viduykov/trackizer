@@ -9,7 +9,7 @@ export interface ISub {
     name: string;
     description: string;
     category: string;
-    firstPayment: string;
+    datePayment: string;
     currency: string;
     price: number;
     id: string;

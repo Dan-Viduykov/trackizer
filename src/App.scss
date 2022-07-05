@@ -51,6 +51,12 @@ main {
     border: 1px solid $gray70;
     border-radius: 16px;
     color: $white;
+    transition: .2s;
+
+    &:focus {
+        border: 1px solid $gray70;
+        box-shadow: 1px 1px 5px 2px rgba($accent-s100, 0.2);
+    }
 }
 
 .shadow-screen {

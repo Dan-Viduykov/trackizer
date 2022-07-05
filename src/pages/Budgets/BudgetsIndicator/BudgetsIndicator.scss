@@ -1,0 +1,23 @@
+@import '../../../sass/style.scss';
+
+.indicator {
+    &__lines {
+        width: 100%;
+        height: 5px;
+        margin-bottom: 45px;
+        background: #4E4E61;
+        border-radius: 99px;
+    }
+    
+    &__line {
+    
+    }
+    
+    &__total {
+        margin-bottom: 4px;
+    }
+    
+    &__capital {
+        color: $gray30;
+    }
+}
