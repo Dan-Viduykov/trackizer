@@ -9,7 +9,7 @@ const store = setupStore();
 const root = ReactDOM.createRoot(document.getElementById("root") as Element);
 
 root.render(
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter  basename={process.env.PUBLIC_URL}>
         <Provider store={store}>
             <App />
         </Provider>

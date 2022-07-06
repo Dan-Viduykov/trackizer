@@ -16,14 +16,14 @@ const App: FC = () => {
         <div className="app">
             <Outlet />
             <Routes>
-                <Route path="/" element={<HomeScreen />}/>
-                <Route path="/budgets" element={<Budgets />}/>
-                <Route path="/calendar" element={<Calendar />}/>
-                <Route path="/creditCards" element={<CreditCards />}/>
-                <Route path="/creditCards/edit" element={<CreditCards />}/>
-                <Route path="/settings" element={<AppSettings />}/>
-                <Route path="/sub-info/:title" element={<SubscriptionInfo />}/>
-                <Route path="/sub-new" element={<NewSubscription />}/>
+                <Route path={process.env.PUBLIC_URL + "/"} element={<HomeScreen />}/>
+                <Route path={process.env.PUBLIC_URL + "/budgets"} element={<Budgets />}/>
+                <Route path={process.env.PUBLIC_URL + "/calendar"} element={<Calendar />}/>
+                <Route path={process.env.PUBLIC_URL + "/creditCards"} element={<CreditCards />}/>
+                <Route path={process.env.PUBLIC_URL + "/creditCards/edit"} element={<CreditCards />}/>
+                <Route path={process.env.PUBLIC_URL + "/settings"} element={<AppSettings />}/>
+                <Route path={process.env.PUBLIC_URL + "/sub-info/:title"} element={<SubscriptionInfo />}/>
+                <Route path={process.env.PUBLIC_URL + "/sub-new"} element={<NewSubscription />}/>
             </Routes>
         </div>
     )
