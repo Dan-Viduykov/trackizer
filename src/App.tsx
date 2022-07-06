@@ -1,6 +1,8 @@
 import { FC } from "react";
-import { Outlet, Route, Routes } from "react-router-dom";
 import './App.scss'
+
+import { Outlet, Route, Routes } from "react-router-dom";
+
 import AppSettings from "./pages/AppSettings";
 import Budgets from "./pages/Budgets";
 import Calendar from "./pages/Calendar";
