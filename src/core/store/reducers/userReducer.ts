@@ -6,6 +6,14 @@ const initialState: UserState = {
     mail: 'j.doe@gmail.com',
     age: 32,
     img: '',
+    creditCard: [
+        {
+            type: 'master card',
+            name: '',
+            number: 0,
+            date: ''
+        }
+    ]
 }
 
 export const UserSlice = createSlice({

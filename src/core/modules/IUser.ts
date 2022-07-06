@@ -3,6 +3,14 @@ export interface UserState {
     mail: string;
     age: number;
     img: string;
+    creditCard: [ICreditCard]
+}
+
+export interface ICreditCard {
+    type: string;
+    name: string;
+    number: number;
+    date: string;
 }
 
 export enum AppActionsTypes {

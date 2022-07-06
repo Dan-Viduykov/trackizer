@@ -18,6 +18,7 @@ const App: FC = () => {
                 <Route path="/budgets" element={<Budgets />}/>
                 <Route path="/calendar" element={<Calendar />}/>
                 <Route path="/creditCards" element={<CreditCards />}/>
+                <Route path="/creditCards/edit" element={<CreditCards />}/>
                 <Route path="/settings" element={<AppSettings />}/>
                 <Route path="/sub-info/:title" element={<SubscriptionInfo />}/>
                 <Route path="/sub-new" element={<NewSubscription />}/>

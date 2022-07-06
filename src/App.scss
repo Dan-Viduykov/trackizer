@@ -72,3 +72,22 @@ main {
         pointer-events: none;
     }
 }
+
+.border {
+    &::before {
+        content: "";
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        inset: 0;
+        border-radius: inherit; 
+        pointer-events: none;
+        padding: 1.5px; 
+        background:linear-gradient(120deg,rgba(255, 255, 255, 0.1), transparent 70%); 
+        -webkit-mask: 
+           linear-gradient(#fff 0 0) content-box, 
+           linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+                mask-composite: exclude; 
+    }
+}

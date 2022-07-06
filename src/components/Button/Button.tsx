@@ -13,7 +13,7 @@ const Button: FC<ButtonProps> = (props) => {
 
     return <button
         type={`${type}`}
-        className={`button border ${className} ${btnType}`} >
+        className={`button border ${btnType} ${className}`} >
         {children}
     </button>
 }
