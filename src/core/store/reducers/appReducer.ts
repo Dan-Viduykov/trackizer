@@ -3,6 +3,7 @@ import { AppState } from "../../modules/IApp";
 
 import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
+import Placeholder from "../../../assets/img/placeholder.jpg";
 
 const uniqid = require('uniqid'); 
 
@@ -13,6 +14,7 @@ const initialState: AppState = {
             description: 'Music app',
             category: 'Enterteintment',
             datePayment: `${new Date().getMonth() + 1}.${new Date().getDate()}.${new Date().getFullYear()}`,
+            image: Placeholder,
             currency: 'USD ($)',
             price: 5.99,
             id: uniqid(),
@@ -22,6 +24,7 @@ const initialState: AppState = {
             description: 'Cloud',
             category: 'cloud',
             datePayment: `${new Date().getMonth() + 1}.${new Date().getDate()}.${new Date().getFullYear()}`,
+            image: Placeholder,
             currency: 'USD ($)',
             price: 25.99,
             id: uniqid(),
@@ -31,6 +34,7 @@ const initialState: AppState = {
             description: 'Video app',
             category: 'Enterteintment',
             datePayment: `${new Date().getDate()} ${new Date().getMonth()} ${new Date().getFullYear()}`,
+            image: Placeholder,
             currency: 'USD ($)',
             price: 15.99,
             id: uniqid(),

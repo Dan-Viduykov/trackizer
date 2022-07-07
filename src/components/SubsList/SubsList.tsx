@@ -13,11 +13,11 @@ const SubsList: FC<SubsListProps> = ({ typeList }) => {
     const { subscriptions, logoMode } = useAppSelector(state => state.appReducer);
     
     const items = (subs: ISub[]) => subs.map((sub: ISub) => {
-        const { name, price, id } = sub;
+        const { name, price, id, image } = sub;
 
         const logoImg = (
-            <div className="subs__item-img">
-                <img src="" alt="" />
+            <div className="subs__item-img img">
+                {image.length !== 0 ? <img src={image} alt="name" /> : <img src="" alt="" />}
             </div>
         )
         const logoDate = (
