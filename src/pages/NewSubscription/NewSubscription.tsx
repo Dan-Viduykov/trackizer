@@ -21,6 +21,7 @@ const NewSubscription: FC = () => {
 
     const [ valuePrice, setValuePrice ] = useState('9.99');
     const [ valueDescription, setValueDescription ] = useState('');
+    const [ valueCategory, setValueCategory ] = useState('');
     const [ valueDate, setValueDate ] = useState('');
     const [ valueImage, setValueImage ] = useState('');
 
@@ -30,9 +31,9 @@ const NewSubscription: FC = () => {
         const newSub: ISub = {
             name: valueDescription,
             description: valueDescription,
-            category: valueDescription,
+            category: valueCategory,
             datePayment: valueDate,
-            image: valueImage.length === 0 ? Placeholder : valueImage,
+            image: valueImage === '' ? Placeholder : valueImage,
             currency: 'USD ($)',
             price: Number(valuePrice),
             id: uniqid(),
@@ -58,7 +59,8 @@ const NewSubscription: FC = () => {
                     <NewSubForm
                         setValuePrice={setValuePrice}
                         setValueDescription={setValueDescription}
-                        setValueDate={setValueDate} />
+                        setValueDate={setValueDate}
+                        setValueCategory={setValueCategory} />
                 </section>
             </form>
         </main>

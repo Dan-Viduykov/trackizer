@@ -1,29 +1,36 @@
-import { ChangeEvent, FC } from "react";
+import { ChangeEvent, FC, useState } from "react";
 import './NewSubForm.scss'
 
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { DatePicker } from "antd";
+import Select from 'react-select';
 
 interface NewSubFormProps {
-    setValuePrice: (value: string) => void
-    setValueDescription: (value: string) => void
-    setValueDate: (value: string) => void
+    setValuePrice: (value: string) => void;
+    setValueDescription: (value: string) => void;
+    setValueDate: (value: string) => void;
+    setValueCategory: (value: string) => void;
 }
 
 const NewSubForm: FC<NewSubFormProps> = (props) => {
-    const {setValuePrice, setValueDescription, setValueDate} = props
+    const { setValuePrice, setValueDescription, setValueDate, setValueCategory } = props
+    const [ selectedOption, setSelectedOption ] = useState(null)
 
-    const onChangePrice = (event: ChangeEvent<HTMLInputElement>) => {
-        setValuePrice(event.target.value)
-    }
-    const onChangeDescription = (event: ChangeEvent<HTMLInputElement>) => {
-        setValueDescription(event.target.value)
-    }
-    const onChangeDate = (date: any, dateString: string) => {
-        setValueDate(dateString)
-    }
+    const onChangePrice = (event: ChangeEvent<HTMLInputElement>) => setValuePrice(event.target.value);
+    const onChangeDescription = (event: ChangeEvent<HTMLInputElement>) => setValueDescription(event.target.value);
+    const onChangeDate = (date: any, dateString: string) => setValueDate(dateString);
+    const onChangeCategory = (selectedOption: any) => {
+        setSelectedOption(selectedOption);
+        setValueCategory(selectedOption.value)
+    };
+
+    const options = [
+        { value: 'entertainments', label: 'Entertainments' },
+        { value: 'science', label: 'Science' },
+        { value: 'health', label: 'Health' },
+    ];
 
     return (
         <div className="sub-form">
@@ -33,10 +40,17 @@ const NewSubForm: FC<NewSubFormProps> = (props) => {
                     id="sub-description"
                     className="sub-form__description ft-2 input"
                     onChange={onChangeDescription} />
-                <DatePicker
-                    placeholder="date payment"
-                    onChange={onChangeDate}
-                    className="sub-form__date" />
+                <div className="sub-form__antd">
+                    <Select
+                        className="sub-form__category"
+                        defaultValue={selectedOption}
+                        onChange={onChangeCategory}
+                        options={options} />
+                    <DatePicker
+                        placeholder="date payment"
+                        onChange={onChangeDate}
+                        className="sub-form__date" />
+                </div>
             </fieldset>
             <fieldset className="sub-form__price">
                 <button className="sub-form__btn border" >
