@@ -15,7 +15,14 @@
         margin-bottom: 8px;
     }
 
-    &__date {
+    &__antd {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__date, &__category {
+        width: 100%;
         padding: 15px;
         background: transparent;
         border: 1px solid $gray70;
