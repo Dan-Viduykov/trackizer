@@ -16,15 +16,11 @@ interface NewSubFormProps {
 
 const NewSubForm: FC<NewSubFormProps> = (props) => {
     const { setValuePrice, setValueDescription, setValueDate, setValueCategory } = props
-    const [ selectedOption, setSelectedOption ] = useState(null)
 
     const onChangePrice = (event: ChangeEvent<HTMLInputElement>) => setValuePrice(event.target.value);
     const onChangeDescription = (event: ChangeEvent<HTMLInputElement>) => setValueDescription(event.target.value);
     const onChangeDate = (date: any, dateString: string) => setValueDate(dateString);
-    const onChangeCategory = (selectedOption: any) => {
-        setSelectedOption(selectedOption);
-        setValueCategory(selectedOption.value)
-    };
+    const onChangeCategory = ({value}: any) => setValueCategory;
 
     const options = [
         { value: 'entertainments', label: 'Entertainments' },
@@ -43,7 +39,6 @@ const NewSubForm: FC<NewSubFormProps> = (props) => {
                 <div className="sub-form__antd">
                     <Select
                         className="sub-form__category"
-                        defaultValue={selectedOption}
                         onChange={onChangeCategory}
                         options={options} />
                     <DatePicker

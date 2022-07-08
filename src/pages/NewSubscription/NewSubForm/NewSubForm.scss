@@ -21,7 +21,29 @@
         align-items: center;
     }
 
-    &__date, &__category {
+    &__category {
+        width: 100%;
+        margin-right: 8px;
+
+        & > div {
+            padding: 6px;
+            background: transparent;
+            border: 1px solid $gray70;
+            border-radius: 16px;
+            color: $white;
+            transition: .2s;
+
+            span {
+                color: black;
+            }
+
+            & > div > div {
+                color: $white;
+            }
+        }
+    }
+
+    &__date {
         width: 100%;
         padding: 15px;
         background: transparent;
