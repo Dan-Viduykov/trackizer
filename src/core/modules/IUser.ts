@@ -3,7 +3,7 @@ export interface UserState {
     mail: string;
     age: number;
     img: string;
-    creditCard: [ICreditCard]
+    creditCard: ICreditCard
 }
 
 export interface ICreditCard {

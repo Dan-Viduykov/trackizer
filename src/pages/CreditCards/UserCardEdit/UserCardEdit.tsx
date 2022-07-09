@@ -1,5 +1,9 @@
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC, FormEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../../../components/Button";
+import { useAppDispatch } from "../../../core/hooks/redux";
+import { ICreditCard } from "../../../core/modules/IUser";
+import { UserSlice } from "../../../core/store/reducers/userReducer";
 import './UserCardEdit.scss'
 
 interface UserCardEditProps {
@@ -8,12 +12,30 @@ interface UserCardEditProps {
 
 const UserCardEdit: FC<UserCardEditProps> = ({ className }) => {
     const [ nameValue, setNameValue ] = useState('');
-    const [ numberValue, setNumberValue ] = useState<number>();
+    const [ numberValue, setNumberValue ] = useState<number>(5555);
     const [ dateValue, setDateValue ] = useState('');
 
     const onChangeName = (event: ChangeEvent<HTMLInputElement>) => setNameValue(event.target.value);
     const onChangeNumber = (event: ChangeEvent<HTMLInputElement>) => setNumberValue(Number(event.target.value));
     const onChangeDate = (event: ChangeEvent<HTMLInputElement>) => setDateValue(event.target.value);
+
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate()
+    const { changeCard } = UserSlice.actions;
+
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        const newCard: ICreditCard = {
+            type: 'master cart',
+            name: nameValue,
+            number: numberValue,
+            date: dateValue,
+        }
+
+        dispatch(changeCard(newCard));
+        navigate(-1)
+    }
 
     return (
         <section className={`${className} user-card`}>
@@ -22,7 +44,7 @@ const UserCardEdit: FC<UserCardEditProps> = ({ className }) => {
                     <img src="" alt="" />
                 </div>
                 <h4 className="user-card__title ft-3">Virtual Card</h4>
-                <fieldset className="user-card__inputs">
+                <form className="user-card__inputs" onSubmit={handleSubmit}>
                     <input
                         type='text'
                         className="user-card__input"
@@ -42,7 +64,7 @@ const UserCardEdit: FC<UserCardEditProps> = ({ className }) => {
                         onChange={onChangeDate}
                         value={dateValue} />
                         <Button className="user-card__button" btnType="Primary">Change</Button>
-                </fieldset>
+                </form>
                 <div className="user-card__chip logo-40">
                     <img src="" alt="" />
                 </div>
