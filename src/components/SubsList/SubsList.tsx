@@ -4,6 +4,7 @@ import './SubsList.scss'
 import { useAppSelector } from "../../core/hooks/redux";
 import { ISub } from "../../core/modules/IApp";
 import { Link } from "react-router-dom";
+import { Empty } from "antd";
 
 interface SubsListProps {
     typeList?: boolean;
@@ -40,7 +41,7 @@ const SubsList: FC<SubsListProps> = ({ typeList }) => {
 
     return (
         <ul className={`subs ${typeList ? 'subs--flex' : false}`}>
-            {items(subscriptions)}
+            {subscriptions.length > 0 ? items(subscriptions) : <Empty />}
         </ul>
     )
 }

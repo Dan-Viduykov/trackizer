@@ -6,8 +6,13 @@ const Statistics: FC = () => {
     const { subscriptions } = useAppSelector(state => state.appReducer);
 
     const activeSubs = subscriptions.length;
-    const highestSubs = subscriptions.reduce((acc, curr) => acc.price > curr.price ? acc : curr).price;
-    const lowestSubs = subscriptions.reduce((acc, curr) => acc.price < curr.price ? acc : curr).price;
+    let highestSubs = 0
+    let lowestSubs = 0
+
+    if (activeSubs > 0) {
+        highestSubs = subscriptions.reduce((acc, curr) => acc.price > curr.price ? acc : curr).price;
+        lowestSubs = subscriptions.reduce((acc, curr) => acc.price < curr.price ? acc : curr).price;
+    }
 
     return (
         <section className="statistic">

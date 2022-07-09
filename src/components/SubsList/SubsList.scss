@@ -47,14 +47,15 @@
     }
 
     &--flex {
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
 
         & .subs__item {
-            width: 100%;
-            max-width: 165px;
-            min-height: 165px;
+            width: 165px;
+            height: 165px;
             
             &-link {
                 height: 100%;
