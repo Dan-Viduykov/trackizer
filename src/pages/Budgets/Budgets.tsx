@@ -16,7 +16,7 @@ const Budgets: FC = () => {
             <p className="budgets__info">Your budgets are on track <img src={cool} alt="" /></p>
             <Categories className={'budgets__categories'} />
             <button className="budgets__add ft-2">Add new category <FontAwesomeIcon icon={faPlusCircle} /></button>
-            <BottomBar budgets />
+            <BottomBar />
         </main>
     )
 }

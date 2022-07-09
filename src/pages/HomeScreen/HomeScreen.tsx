@@ -39,7 +39,7 @@ const HomeScreen: FC = () => {
                         <SubsList />
                     </div>
                 </div>
-                <BottomBar home/>
+                <BottomBar/>
             </section>
         </main>
     )

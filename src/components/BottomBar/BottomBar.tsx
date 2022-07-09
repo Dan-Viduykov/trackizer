@@ -6,18 +6,11 @@ import { faCalendarDays, faHouse, faListUl, faPlus } from "@fortawesome/free-sol
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import bg from '../../assets/svg/bottom-bar.svg'
 
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 
-interface BottomBarProps {
-    home?: boolean;
-    budgets?: boolean;
-    calendar?: boolean;
-    creditCards?: boolean;
-}
-
-const BottomBar: FC<BottomBarProps> = (props) => {
-    const { home, budgets, calendar, creditCards } = props;
-
+const BottomBar: FC = () => {
+    const location = useLocation()
+    
     return (
         <footer className="bottom-bar">
             <img src={bg} alt="" />
@@ -28,13 +21,21 @@ const BottomBar: FC<BottomBarProps> = (props) => {
                 <div className="bottom-bar__buttons-group"> 
                     <NavLink to='/' className="bottom-bar__buttons-link">
                         <label htmlFor="home" className="bottom-bar__label">
-                                <input id="home" type="radio" name="nav" defaultChecked={home} />
+                                <input
+                                    id="home"
+                                    type="radio"
+                                    name="nav"
+                                    defaultChecked={location.pathname === '/' ? true : false} />
                                 <FontAwesomeIcon icon={faHouse} />
                         </label>
                     </NavLink>
                     <NavLink to='/budgets' className="bottom-bar__buttons-link">
                         <label htmlFor="listApp" className="bottom-bar__label">
-                                <input id="listApp" type="radio" name="nav" defaultChecked={budgets} />
+                                <input
+                                    id="listApp"
+                                    type="radio"
+                                    name="nav"
+                                    defaultChecked={location.pathname === '/budgets' ? true : false} />
                                 <FontAwesomeIcon icon={faListUl} />
                         </label>
                     </NavLink>
@@ -42,13 +43,21 @@ const BottomBar: FC<BottomBarProps> = (props) => {
                 <div className="bottom-bar__buttons-group"> 
                     <NavLink to='/calendar'  className="bottom-bar__buttons-link">
                         <label htmlFor="calendar" className="bottom-bar__label">
-                                <input id="calendar" type="radio" name="nav" defaultChecked={calendar} />
+                                <input
+                                    id="calendar"
+                                    type="radio"
+                                    name="nav"
+                                    defaultChecked={location.pathname === '/calendar' ? true : false} />
                                 <FontAwesomeIcon icon={faCalendarDays} />
                         </label>
                     </NavLink>
                     <NavLink to='/creditCards' className="bottom-bar__buttons-link">
                         <label htmlFor="credit" className="bottom-bar__label">
-                                <input id="credit" type="radio" name="nav" defaultChecked={creditCards} />
+                                <input
+                                    id="credit"
+                                    type="radio"
+                                    name="nav"
+                                    defaultChecked={location.pathname === '/creditCards' ? true : false} />
                                 <FontAwesomeIcon icon={faCreditCardAlt} />
                         </label>
                     </NavLink>

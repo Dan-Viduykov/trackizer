@@ -39,7 +39,7 @@ const CreditCards: FC = () => {
             </section>
             <footer className="credit-card__footer bookmark bookmark--reverse">
                 <NavLink to='/creditCards/edit' className="credit-card__add ft-2"><span>Change Card</span><FontAwesomeIcon icon={faPlusCircle} /></NavLink>
-                <BottomBar creditCards />
+                <BottomBar />
             </footer>
         </main>
     )

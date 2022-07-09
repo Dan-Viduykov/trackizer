@@ -79,7 +79,7 @@ const Calendar: FC = () => {
                     <SubsList typeList/>
                 </ul>
             </section>
-            <BottomBar calendar />
+            <BottomBar />
         </main>
     )
 }
