@@ -1,13 +1,13 @@
 import { FC } from "react";
-import { useAppSelector } from "../../../core/hooks/redux";
 import './UserCard.scss'
+import { useAppSelector } from "../../../core/hooks/redux";
 
 interface UserCardProps {
     className?: string;
 }
 
 const UserCard: FC<UserCardProps> = ({ className }) => {
-    const { name, number, date } = useAppSelector(state => state.userReducer.creditCard)
+    const { nameCard, number, date } = useAppSelector(state => state.userReducer.creditCard!)
 
     return (
         <section className={`${className} user-card`}>
@@ -16,7 +16,7 @@ const UserCard: FC<UserCardProps> = ({ className }) => {
                     <img src="" alt="" />
                 </div>
                 <h4 className="user-card__title ft-3">Virtual Card</h4>
-                <p className="user-card__name ft-1">{name}</p>
+                <p className="user-card__name ft-1">{nameCard}</p>
                 <p className="user-card__number ft-3">{number}</p>
                 <p className="user-card__date ft-2">{date}</p>
                 <div className="user-card__chip logo-40">

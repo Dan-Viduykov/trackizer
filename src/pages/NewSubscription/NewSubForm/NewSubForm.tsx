@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC } from "react";
 import './NewSubForm.scss'
 
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -68,4 +68,4 @@ const NewSubForm: FC<NewSubFormProps> = (props) => {
     )
 }
 
-export default NewSubForm
+export {NewSubForm}

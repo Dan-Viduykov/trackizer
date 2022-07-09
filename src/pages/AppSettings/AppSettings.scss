@@ -5,37 +5,6 @@
         margin-bottom: 24px ;
     }
 
-    &__user {
-        margin-top: 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
-
-    &__img {
-        width: 72px;
-        height: 72px;
-        margin: 0 auto 8px;
-        display: flex;
-        background: #A2A2B5;
-        border-radius: 100px;
-    }
-
-    &__user-name {
-        margin-bottom: 0;
-    }
-
-    &__mail {
-        margin-bottom: 16px;
-        color: #A2A2B5;
-    }
-
-    &__btn-edit {
-        margin: 0 auto;
-        padding: 6px 30px;
-    }
-
     &__category {
         color: #fff;
         display: flex;

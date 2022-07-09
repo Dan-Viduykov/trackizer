@@ -8,10 +8,11 @@ interface UploadImageProps {
   className?: string
   setValueImage: (value: string) => void;
   valueImage: string;
+  name?: string;
 }
 
 const UploadImage: FC<UploadImageProps> = (props) => {
-  const { className, setValueImage, valueImage } = props;
+  const { className, setValueImage, valueImage, name } = props;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
@@ -20,11 +21,11 @@ const UploadImage: FC<UploadImageProps> = (props) => {
   }
 
   return (
-    <div className="file border">
+    <div className={`file border ${className}`}>
       <input
-        className={`${className} file__input`}
+        className={`file__input`}
         id='image-file'
-        name="image-file"
+        name={name ? name : `image-file`}
         type="file"
         onChange={handleChange} />
       <label 
@@ -40,4 +41,4 @@ const UploadImage: FC<UploadImageProps> = (props) => {
   )
 }
 
-export {UploadImage}
+export default UploadImage

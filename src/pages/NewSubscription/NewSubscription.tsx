@@ -3,8 +3,8 @@ import './NewSubscription.scss'
 
 import HeaderTopMenu from "../../components/HeaderTopMenu";
 
-import { UploadImage } from "./UploadImage";
-import NewSubForm from "./NewSubForm";
+import UploadImage from "../../components/UploadImage";
+import { NewSubForm } from "./NewSubForm";
 
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../core/hooks/redux";
@@ -51,6 +51,7 @@ const NewSubscription: FC = () => {
                     <HeaderTopMenu angleLeft title="New" />
                     <h3 className="new-sub__title ft-7">Add new subscription</h3>
                     <UploadImage
+                        className="new-sub__change-img"
                         setValueImage={setValueImage}
                         valueImage={valueImage} />
                     <div className="new-sub__sub-name ft-2">HGBO GO</div>             

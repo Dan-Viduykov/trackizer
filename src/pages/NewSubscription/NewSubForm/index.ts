@@ -1,3 +1,3 @@
-import NewSubForm from "./NewSubForm";
+import {NewSubForm} from "./NewSubForm";
 
-export default NewSubForm
+export {NewSubForm}

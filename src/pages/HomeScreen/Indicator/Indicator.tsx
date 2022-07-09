@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { useAppSelector } from "../../../core/hooks/redux";
 import './Indicator.scss'
+import { useAppSelector } from "../../../core/hooks/redux";
 
 const Indicator: FC = () => {
     const INDICATOR_MAX_LENGTH = 270;

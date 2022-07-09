@@ -28,7 +28,7 @@ const UserCardEdit: FC<UserCardEditProps> = ({ className }) => {
 
         const newCard: ICreditCard = {
             type: 'master cart',
-            name: nameValue,
+            nameCard: nameValue,
             number: numberValue,
             date: dateValue,
         }

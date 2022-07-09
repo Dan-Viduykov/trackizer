@@ -4,29 +4,27 @@ import './AppSettings.scss'
 import { faAngleRight, faArrowDownShortWide, faSpellCheck } from "@fortawesome/free-solid-svg-icons";
 import { faSun } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "antd/dist/antd.css";
 
-import Button from "../../components/Button";
 import HeaderTopMenu from "../../components/HeaderTopMenu";
 import { useAppSelector } from "../../core/hooks/redux";
 
-const AppSettings: FC = () => {
+import { useLocation } from "react-router-dom";
+import { UserView } from "./UserView";
+import { UserEdit } from "./UserEdit";
 
-    const { name, mail } = useAppSelector(state => state.userReducer);
+// кароч, берёшь удаляешь всё нахер, оставляешь только вью часть, вместо пишек добавляешь инпут, делаешь его не заметным
+// и после чего ставишь в вэлью значение из редюсера, и при изменении при нажатии на кнопку, всё это просто сохранится в 
+// состоянии юзера в редаксе
+ 
+const AppSettings: FC = () => {
     const { sorting, theme, fontSize } = useAppSelector(state => state.appSettingsReducer)
-    
+    const location = useLocation()
+
     return (
         <main className="settings section">
             <section className="settings__header">
                 <HeaderTopMenu angleLeft title="Settings" />
-                <div className="settings__user">
-                    <div className="settings__img">
-                        <img src="" alt="" />
-                    </div>
-                    <p className="settings__user-name ft-4" >{name}</p>
-                    <p className="settings__mail ft-body-s" >{mail}</p>
-                    <Button className="settings__btn-edit" type="submit" btnType="Secondary" >Edit profile</Button>
-                </div>
+                { location.pathname === '/settings' ? <UserView /> : <UserEdit /> }
             </section>
             <ul className="settings__category">
                 <li className="settings__category-item">

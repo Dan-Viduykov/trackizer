@@ -1,7 +1,8 @@
 import { FC } from "react";
+import './SubsMode.scss'
+
 import { useAppDispatch } from "../../../core/hooks/redux";
 import { AppSlice } from "../../../core/store/reducers/appReducer";
-import './SubsMode.scss'
 
 const SubsMode: FC = () => {
     const { changeMode } = AppSlice.actions
