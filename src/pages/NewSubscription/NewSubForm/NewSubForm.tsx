@@ -24,22 +24,11 @@ const NewSubForm: FC<NewSubFormProps> = (props) => {
     const onChangePrice = (event: ChangeEvent<HTMLInputElement>) => setValuePrice(event.target.value);
     const onChangeDescription = (event: ChangeEvent<HTMLInputElement>) => setValueDescription(event.target.value);
     const onChangeDate = (date: any, dateString: string) => setValueDate(dateString);
-    const onChangeCategory = ({value}: any) => setValueCategory;
+    const onChangeCategory = ({value}: any) => setValueCategory(value);
 
-    // const options = [
-    //     { value: 'entertainments', label: 'Entertainments' },
-    //     { value: 'science', label: 'Science' },
-    //     { value: 'health', label: 'Health' },
-    // ];
-
-    const options = (categoryList: ICategory[]) => {
-        return categoryList.map(({ title }) => {
-            return {
-                value: title,
-                label: title
-            }
-        })
-    }
+    const options = categories.map(({ title }: ICategory) => {
+        return {value: title, label: title}
+    })
 
     return (
         <div className="sub-form">
@@ -53,7 +42,7 @@ const NewSubForm: FC<NewSubFormProps> = (props) => {
                     <Select
                         className="sub-form__category"
                         onChange={onChangeCategory}
-                        options={options(categories)} />
+                        options={options} />
                     <DatePicker
                         placeholder="date payment"
                         onChange={onChangeDate}
