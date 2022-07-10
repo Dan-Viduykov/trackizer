@@ -1,8 +1,6 @@
-import { ISub } from './../../modules/IApp';
-import { AppState } from "../../modules/IApp";
+import { ISub, AppState } from './../../modules/IApp';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { PayloadAction } from '@reduxjs/toolkit';
-import { createSlice } from '@reduxjs/toolkit';
 import Placeholder from "../../../assets/img/placeholder.jpg";
 
 const uniqid = require('uniqid'); 
@@ -40,6 +38,20 @@ const initialState: AppState = {
             id: uniqid(),
         },
     ],
+    categories: [
+        {
+            title: 'Entertainment',
+            limit: 600,
+            spent: 50.99,
+            icon: ''
+        },
+        {
+            title: 'Auto & Transport',
+            limit: 400,
+            spent: 25.99,
+            icon: ''
+        },
+    ],
     moneyLimit: 1800,
     moneySpent: 1200,
     logoMode: 'imgs'
@@ -54,7 +66,6 @@ export const AppSlice = createSlice({
         },
         deleteSubscription(state, action: PayloadAction<string>) {
             state.subscriptions = state.subscriptions.filter(sub => sub.id !== action.payload);
-            console.log(state.subscriptions);
         },
         changeMode(state, action: PayloadAction<'imgs' | 'dates'>) {
             state.logoMode = action.payload;
