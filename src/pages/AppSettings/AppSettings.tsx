@@ -8,23 +8,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import HeaderTopMenu from "../../components/HeaderTopMenu";
 import { useAppSelector } from "../../core/hooks/redux";
 
-import { useLocation } from "react-router-dom";
-import { UserView } from "./UserView";
-import { UserEdit } from "./UserEdit";
+import { UserInfo } from "./UserInfo";
 
-// кароч, берёшь удаляешь всё нахер, оставляешь только вью часть, вместо пишек добавляешь инпут, делаешь его не заметным
-// и после чего ставишь в вэлью значение из редюсера, и при изменении при нажатии на кнопку, всё это просто сохранится в 
-// состоянии юзера в редаксе
- 
 const AppSettings: FC = () => {
     const { sorting, theme, fontSize } = useAppSelector(state => state.appSettingsReducer)
-    const location = useLocation()
 
     return (
         <main className="settings section">
             <section className="settings__header">
                 <HeaderTopMenu angleLeft title="Settings" />
-                { location.pathname === '/settings' ? <UserView /> : <UserEdit /> }
+                <UserInfo />
             </section>
             <ul className="settings__category">
                 <li className="settings__category-item">

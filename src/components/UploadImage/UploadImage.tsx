@@ -1,18 +1,16 @@
-import { ChangeEvent, FC } from "react";
+import { ChangeEvent, FC, ReactElement } from "react";
 import './UploadImage.scss'
-
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface UploadImageProps {
   className?: string
   setValueImage: (value: string) => void;
   valueImage: string;
   name?: string;
+  children?: ReactElement | ReactElement[];
 }
 
 const UploadImage: FC<UploadImageProps> = (props) => {
-  const { className, setValueImage, valueImage, name } = props;
+  const { className, setValueImage, valueImage, name, children } = props;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
@@ -21,7 +19,7 @@ const UploadImage: FC<UploadImageProps> = (props) => {
   }
 
   return (
-    <div className={`file border ${className}`}>
+    <div className={`${className} file border`}>
       <input
         className={`file__input`}
         id='image-file'
@@ -31,8 +29,7 @@ const UploadImage: FC<UploadImageProps> = (props) => {
       <label 
         className="file__label"
         htmlFor="image-file" >
-          <FontAwesomeIcon className="file__plus" icon={faPlus} />
-          <span className="ft-body-l">Upload image</span>
+          {children}
       </label>
       <div className="file__preview img">
         { valueImage !== '' ? <img src={valueImage} alt="" /> : null }

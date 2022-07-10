@@ -21,7 +21,10 @@ export const UserSlice = createSlice({
             state.creditCard = action.payload;
         },
         changeUser(state, action: PayloadAction<UserState>) {
-            state = { ...state, ...action.payload };
+            const { name, img, mail } = action.payload;
+            state.img = img;
+            state.name = name;
+            state.mail = mail;
         }
     }
 })
