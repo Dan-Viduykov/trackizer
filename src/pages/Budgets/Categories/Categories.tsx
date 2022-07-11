@@ -11,14 +11,15 @@ interface CategoriesProps {
 
 interface CategoryIndicatorProps {
     spent: number;
+    color: string;
 }
 
 const CategoryIndicator: FC<CategoryIndicatorProps> = (props) => {
-    const { spent } = props
+    const { spent, color } = props
 
     return (
         <div className="category__indicator">
-            <div style={{width: `${spent}%`}}></div>
+            <div style={{width: `${spent}%`, background: color}}></div>
         </div>
     )
 }
@@ -28,7 +29,7 @@ const Categories: FC<CategoriesProps> = ({ className }) => {
     const uniqid = require('uniqid');
 
     const createCategoryItem = (category: ICategory) => {
-        const { title, limit, icon } = category;
+        const { title, limit, icon, color } = category;
 
         const spent = subscriptions
                         .filter(sub => sub.category === title)
@@ -48,7 +49,7 @@ const Categories: FC<CategoriesProps> = ({ className }) => {
                         <p className="ft-body-s" >of ${limit}</p>
                     </div>
                 </div>
-                <CategoryIndicator spent={spentPercent} />
+                <CategoryIndicator spent={spentPercent} color={color} />
             </li>
         )
     }

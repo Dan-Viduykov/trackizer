@@ -11,7 +11,7 @@ interface NewCategoryProps {
 
 
 const NewCategory: FC<NewCategoryProps> = ({ className }) => {
-    const { subscriptions } = useAppSelector(state => state.appReducer);
+    const { colors } = useAppSelector(state => state.appReducer);
     const dispatch = useAppDispatch();
     const { addCategory } = AppSlice.actions;
     const navigate = useNavigate();
@@ -22,12 +22,15 @@ const NewCategory: FC<NewCategoryProps> = ({ className }) => {
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-
+        
+        const randomColor = colors[ Math.floor(Math.random() * colors.length) ];
         const newCategory = {
             title: valueTitle,
             limit: valueLimit,
+            color: randomColor,
             icon: ''
-        }
+        };
+
         dispatch(addCategory(newCategory))
         navigate(-1);
     }

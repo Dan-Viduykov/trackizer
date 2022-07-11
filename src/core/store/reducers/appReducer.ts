@@ -42,9 +42,11 @@ const initialState: AppState = {
         {
             title: 'Auto & Transport',
             limit: 400,
+            color: '',
             icon: ''
         },
     ],
+    colors: ['#5E00F5', '#7722FF', '#924EFF', '#AD7BFF', '#C9A7FF', '#E4D3FF', '#FF7966', '#FFA699', '#FFD2CC', '#00FAD9', '#7DFFEE'],
     moneyLimit: 1800,
     moneySpent: 1200,
     logoMode: 'imgs'
