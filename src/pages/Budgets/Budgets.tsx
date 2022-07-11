@@ -8,14 +8,24 @@ import cool from '../../assets/svg/cool.svg'
 import BottomBar from "../../components/BottomBar";
 import { BudgetsIndicator } from "./BudgetsIndicator";
 import { Categories } from "./Categories";
+import { NavLink, useLocation } from "react-router-dom";
+import { NewCategory } from "./NewCategory";
 
 const Budgets: FC = () => {
+    const location = useLocation()
+
     return (
         <main className="budgets section">
             <BudgetsIndicator className="budgets__indicator" />
             <p className="budgets__info">Your budgets are on track <img src={cool} alt="" /></p>
-            <Categories className={'budgets__categories'} />
-            <button className="budgets__add ft-2">Add new category <FontAwesomeIcon icon={faPlusCircle} /></button>
+            {
+                location.pathname === '/budgets' ?
+                    <Categories className={'budgets__categories'} /> :
+                    <NewCategory className={'budgets__new-category'} />
+            }
+            <NavLink to={'/budgets/new'} className="budgets__add ft-2" >
+                Add new category <FontAwesomeIcon style={{marginLeft: '8px'}} icon={faPlusCircle} />
+            </NavLink>
             <BottomBar />
         </main>
     )
