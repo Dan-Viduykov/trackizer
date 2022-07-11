@@ -1,4 +1,4 @@
-import { ISub, AppState } from './../../modules/IApp';
+import { ISub, AppState, ICategory } from './../../modules/IApp';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import Placeholder from "../../../assets/img/placeholder.jpg";
@@ -10,7 +10,7 @@ const initialState: AppState = {
         {
             name: 'Spotify',
             description: 'Music app',
-            category: 'Enterteintment',
+            category: 'Entertainment',
             datePayment: `${new Date().getMonth() + 1}.${new Date().getDate()}.${new Date().getFullYear()}`,
             image: Placeholder,
             currency: 'USD ($)',
@@ -30,7 +30,7 @@ const initialState: AppState = {
         {
             name: 'YouTube Premium',
             description: 'Video app',
-            category: 'Enterteintment',
+            category: 'Entertainment',
             datePayment: `${new Date().getDate()} ${new Date().getMonth()} ${new Date().getFullYear()}`,
             image: Placeholder,
             currency: 'USD ($)',
@@ -40,15 +40,8 @@ const initialState: AppState = {
     ],
     categories: [
         {
-            title: 'Entertainment',
-            limit: 600,
-            spent: 50.99,
-            icon: ''
-        },
-        {
             title: 'Auto & Transport',
             limit: 400,
-            spent: 25.99,
             icon: ''
         },
     ],
@@ -69,6 +62,9 @@ export const AppSlice = createSlice({
         },
         changeMode(state, action: PayloadAction<'imgs' | 'dates'>) {
             state.logoMode = action.payload;
+        },
+        addCategory(state, action: PayloadAction<ICategory>) {
+            state.categories = [...state.categories, action.payload]
         }
     }
 })

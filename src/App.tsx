@@ -18,6 +18,7 @@ const App: FC = () => {
             <Routes>
                 <Route path="/" element={<HomeScreen />}/>
                 <Route path="/budgets" element={<Budgets />}/>
+                <Route path="/budgets/new" element={<Budgets />}/>
                 <Route path="/calendar" element={<Calendar />}/>
                 <Route path="/creditCards" element={<CreditCards />}/>
                 <Route path="/creditCards/edit" element={<CreditCards />}/>

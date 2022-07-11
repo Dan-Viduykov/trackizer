@@ -9,7 +9,6 @@ export interface AppState {
 export interface ICategory {
     title: string;
     limit: number;
-    spent: number;
     icon: string;
 }
 

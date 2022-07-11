@@ -1,6 +1,5 @@
 import { FC } from "react";
 import './Categories.scss'
-
 import { faGhost } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useAppSelector } from "../../../core/hooks/redux";
@@ -10,12 +9,31 @@ interface CategoriesProps {
     className: string;
 }
 
+interface CategoryIndicatorProps {
+    spent: number;
+}
+
+const CategoryIndicator: FC<CategoryIndicatorProps> = (props) => {
+    const { spent } = props
+
+    return (
+        <div className="category__indicator">
+            <div style={{width: `${spent}%`}}></div>
+        </div>
+    )
+}
+
 const Categories: FC<CategoriesProps> = ({ className }) => {
-    const { categories } = useAppSelector(state => state.appReducer);
+    const { categories, subscriptions } = useAppSelector(state => state.appReducer);
     const uniqid = require('uniqid');
 
     const createCategoryItem = (category: ICategory) => {
-        const { title, spent, limit, icon } = category;
+        const { title, limit, icon } = category;
+
+        const spent = subscriptions
+                        .filter(sub => sub.category === title)
+                        .reduce((acc, sub) => {return acc + sub.price;}, 0);
+        const spentPercent = spent*100/limit;
 
         return (
             <li className="categories__category category border" key={uniqid()}>  
@@ -30,9 +48,7 @@ const Categories: FC<CategoriesProps> = ({ className }) => {
                         <p className="ft-body-s" >of ${limit}</p>
                     </div>
                 </div>
-                <div className="category__indicator">
-                    <div></div>
-                </div>
+                <CategoryIndicator spent={spentPercent} />
             </li>
         )
     }
