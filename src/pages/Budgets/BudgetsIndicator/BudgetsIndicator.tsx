@@ -4,7 +4,8 @@ import './BudgetsIndicator.scss'
 import HeaderTopMenu from "../../../components/HeaderTopMenu";
 
 interface BudgetsIndicatorProps {
-    className: string
+    className: string;
+    color: string;
 }
 
 const BudgetsIndicator: FC<BudgetsIndicatorProps> = ({ className }) => {
