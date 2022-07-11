@@ -10,7 +10,7 @@ const initialState: AppState = {
         {
             name: 'Spotify',
             description: 'Music app',
-            category: 'Entertainment',
+            category: 'Auto & Transport',
             datePayment: `${new Date().getMonth() + 1}.${new Date().getDate()}.${new Date().getFullYear()}`,
             image: Placeholder,
             currency: 'USD ($)',
@@ -19,7 +19,7 @@ const initialState: AppState = {
         },
         {
             name: 'Microsoft OneDrive',
-            description: 'Cloud',
+            description: 'Auto & Transport',
             category: 'cloud',
             datePayment: `${new Date().getMonth() + 1}.${new Date().getDate()}.${new Date().getFullYear()}`,
             image: Placeholder,
@@ -30,7 +30,7 @@ const initialState: AppState = {
         {
             name: 'YouTube Premium',
             description: 'Video app',
-            category: 'Entertainment',
+            category: 'Auto & Transport',
             datePayment: `${new Date().getDate()} ${new Date().getMonth()} ${new Date().getFullYear()}`,
             image: Placeholder,
             currency: 'USD ($)',
@@ -67,7 +67,10 @@ export const AppSlice = createSlice({
         },
         addCategory(state, action: PayloadAction<ICategory>) {
             state.categories = [...state.categories, action.payload]
-        }
+        },
+        deleteCategory(state, action: PayloadAction<string>) {
+            state.categories = state.categories.filter(category => category.title !== action.payload);
+        },
     }
 })
 
