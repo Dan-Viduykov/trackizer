@@ -6,7 +6,7 @@ import Indicator from "./Indicator/Indicator";
 import Statistics from "./Statistics/Statistics";
 import SubsMode from "./SubsMode/SubsMode";
 
-import SubsList from "../../components/SubsList";
+import SubsList from "../../components/SubsList/SubsList";
 import Header from "../../components/Header/Header";
 
 import { Link } from "react-router-dom";

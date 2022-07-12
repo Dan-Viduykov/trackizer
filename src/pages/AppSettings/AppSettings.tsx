@@ -16,7 +16,7 @@ const AppSettings: FC = () => {
     return (
         <main className="settings section">
             <section className="settings__header">
-                <Header angleLeft title="Settings" />
+                <Header style={{marginBottom: '44px'}} angleLeft title="Settings" />
                 <UserInfo />
             </section>
             <ul className="settings__category">

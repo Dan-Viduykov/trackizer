@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import './Calendar.scss'
 
-import SubsList from "../../components/SubsList";
+import SubsList from "../../components/SubsList/SubsList";
 
 import { Select } from "antd";
 import 'antd/dist/antd.css';

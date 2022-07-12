@@ -1,0 +1,17 @@
+.subs {
+    &_flex {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__item {
+        margin-bottom: 8px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

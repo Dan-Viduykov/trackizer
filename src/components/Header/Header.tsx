@@ -1,5 +1,5 @@
-import { FC } from "react";
-import './Header.scss'
+import { CSSProperties, FC } from "react";
+import styles from './Header.module.scss'
 
 import { faAngleLeft, faTrashCan, faGear } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,19 +13,19 @@ interface HeaderProps {
     trash?: string;
     gear?: boolean;
     title?: string;
-    classesNames?: string;
+    className?: string;
+    style?: CSSProperties;
 }
 
 const Header: FC<HeaderProps> = (props) => {
-    const { angleLeft, title, trash, gear, classesNames } = props;
-
+    const { angleLeft, title, trash, gear, className, style } = props;
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
     const { deleteSubscription } = AppSlice.actions
 
     const buttonBack = (
         <button
-            className="top-menu__btn top-menu__btn--left"
+            className={styles.buttonLeft}
             onClick={() => navigate(-1)} >
             <FontAwesomeIcon icon={faAngleLeft} />
         </button>
@@ -34,7 +34,7 @@ const Header: FC<HeaderProps> = (props) => {
     const ButtonGear = (
         <NavLink 
             to='/settings'
-            className="top-menu__btn top-menu__btn--right" >
+            className={styles.buttonRight} >
             <FontAwesomeIcon icon={faGear} />
         </NavLink>
     );
@@ -46,18 +46,18 @@ const Header: FC<HeaderProps> = (props) => {
 
     const buttonTrash = (
         <button
-            className="top-menu__btn top-menu__btn--right"
+            className={styles.buttonRight}
             onClick={trashSubscription} >
             <FontAwesomeIcon icon={faTrashCan} />
         </button>
     )
     
     return (
-        <div className={`top-menu ${classesNames}`}>
+        <header className={`${styles.header} ${className}`} style={style}>
             { angleLeft ? buttonBack : false }
-            <p className="top-menu__page-name ft-body-l">{title}</p>
+            <p className={`${styles.title}`}>{title}</p>
             { trash ? gear ? false : buttonTrash : gear ? ButtonGear : false }
-        </div>
+        </header>
     )
 }
 
