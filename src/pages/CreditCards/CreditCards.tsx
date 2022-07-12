@@ -3,12 +3,12 @@ import './CreditCards.scss'
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import BottomBar from "../../components/BottomBar";
 import HeaderTopMenu from "../../components/HeaderTopMenu";
 
 import { UserCard } from "./UserCard";
 import { NavLink, useLocation } from "react-router-dom";
 import { UserCardEdit } from "./UserCardEdit";
+import Footer from "../../components/Footer/Footer";
 
 const CreditCards: FC = () => {
     const location = useLocation();
@@ -39,7 +39,7 @@ const CreditCards: FC = () => {
             </section>
             <footer className="credit-card__footer bookmark bookmark--reverse">
                 <NavLink to='/creditCards/edit' className="credit-card__add ft-2"><span>Change Card</span><FontAwesomeIcon icon={faPlusCircle} /></NavLink>
-                <BottomBar />
+                <Footer />
             </footer>
         </main>
     )

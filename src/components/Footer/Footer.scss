@@ -1,0 +1,66 @@
+.bottom-bar {
+    padding-top: 11px;
+    position: fixed;
+    left: 30px;
+    bottom: 16px;
+    text-align: center;
+    z-index: 2;
+
+    &__add-sub {
+        width: 48px;
+        height: 48px;
+        position: absolute;
+        top: 0;
+        left: calc(50% - 24px);
+        border: none;
+        background: radial-gradient(100% 100% at 50% 100%, rgba(255, 255, 255, 0) 43.25%, rgba(255, 127, 55, 0.5) 100%), #FF7966;
+        box-shadow: 0px 8px 25px rgba(255, 121, 102, 0.5);
+        border-radius: 50%; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+    }
+
+    &__plus {
+        font-size: 26px;
+        color: var(--white);
+    }
+
+    &__buttons {
+        width: 330px;
+        height: 55px;
+        margin-top: 11px;
+        padding: 0 22px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        input {
+            display: none;
+        }
+    }
+
+    &__buttons-group {}
+
+    &__buttons-link {
+        &:nth-child(1),
+        &:nth-child(3) {
+            margin-right: 50px;
+        }
+    }
+    
+    &__label {
+        font-size: 18px;
+        background-color: transparent;
+        border: none;
+        color: var(--gray30);
+    }
+
+    input[type="radio"]:checked ~ * { 
+        color: var(--white);
+    }
+}

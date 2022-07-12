@@ -1,12 +1,12 @@
 import { FC, useState } from "react";
 import './Calendar.scss'
 
-import BottomBar from "../../components/BottomBar";
 import HeaderTopMenu from "../../components/HeaderTopMenu";
 import SubsList from "../../components/SubsList";
 
 import { Select } from "antd";
 import 'antd/dist/antd.css';
+import Footer from "../../components/Footer/Footer";
 
 const { Option } = Select;
 
@@ -79,7 +79,7 @@ const Calendar: FC = () => {
                     <SubsList typeList/>
                 </ul>
             </section>
-            <BottomBar />
+            <Footer />
         </main>
     )
 }

@@ -7,11 +7,11 @@ import Statistics from "./Statistics";
 import SubsMode from "./SubsMode";
 
 import SubsList from "../../components/SubsList";
-import BottomBar from "../../components/BottomBar";
 import HeaderTopMenu from "../../components/HeaderTopMenu";
 
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../../core/hooks/redux";
+import Footer from "../../components/Footer/Footer";
 
 const HomeScreen: FC = () => {
     const { moneySpent } = useAppSelector(state => state.appReducer)
@@ -39,7 +39,7 @@ const HomeScreen: FC = () => {
                         <SubsList />
                     </div>
                 </div>
-                <BottomBar/>
+                <Footer />
             </section>
         </main>
     )
