@@ -10,7 +10,7 @@ const initialState: AppState = {
         {
             name: 'Spotify',
             description: 'Music app',
-            category: 'Auto & Transport',
+            category: 'Enterteintment',
             datePayment: `${new Date().getMonth() + 1}.${new Date().getDate()}.${new Date().getFullYear()}`,
             image: Placeholder,
             currency: 'USD ($)',
@@ -58,6 +58,9 @@ export const AppSlice = createSlice({
     reducers: {
         addSubscription(state, action: PayloadAction<ISub>) {
             state.subscriptions = [...state.subscriptions, action.payload];
+        },
+        changeSubscription(state, action: PayloadAction<ISub>) {
+            state.subscriptions = [...state.subscriptions, action.payload]
         },
         deleteSubscription(state, action: PayloadAction<string>) {
             state.subscriptions = state.subscriptions.filter(sub => sub.id !== action.payload);

@@ -18,13 +18,18 @@ const Category: FC<CategoryProps> = (props) => {
     const { title, limit, color, icon } = props;
     const { subscriptions } = useAppSelector(state => state.appReducer);
     const dispatch = useAppDispatch();
-    const { deleteCategory } = AppSlice.actions
+    const { deleteCategory, changeSubscription } = AppSlice.actions
 
     const [ active, setActive ] = useState(false)
 
     const spent = subscriptions
         .filter(sub => sub.category === title)
         .reduce((acc, sub) => {return acc + sub.price;}, 0);
+
+    const handleClick = () => {
+        // нужно как то изменить подписку, чтобы надпись сменилась на null
+        dispatch(deleteCategory(title))
+    } 
 
     return (
         <li
@@ -47,7 +52,7 @@ const Category: FC<CategoryProps> = (props) => {
                     <Button
                         className="category__btn-del"
                         btnType="Primary"
-                        onClick={() => dispatch(deleteCategory(title))} >
+                        onClick={handleClick} >
                         Del
                     </Button> :
                 null
