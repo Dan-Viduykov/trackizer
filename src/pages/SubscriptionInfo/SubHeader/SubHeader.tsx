@@ -1,7 +1,7 @@
 import { FC } from "react";
 import './SubHeader.scss'
 
-import HeaderTopMenu from "../../../components/HeaderTopMenu";
+import Header from "../../../components/Header/Header";
 import { useAppSelector } from "../../../core/hooks/redux";
 
 interface SubHeaderProps {
@@ -13,7 +13,7 @@ const SubHeader: FC<SubHeaderProps> = ({ idx }) => {
 
     return (
         <section className="sub-header">
-            <HeaderTopMenu angleLeft title="Subscription info" trash={id}/>
+            <Header angleLeft title="Subscription info" trash={id}/>
             <div className="sub-header__img">
                 <img src="" alt="" />
             </div>

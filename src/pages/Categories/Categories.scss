@@ -1,5 +1,3 @@
-@import '../../sass/style.scss';
-
 .budgets {
 
     &__indicator {
@@ -11,7 +9,7 @@
         width: 100%;
         padding: 20px 0;
         margin-bottom: 16px;
-        border: 1px solid $gray60;
+        border: 1px solid var(--gray60);
         border-radius: 16px;
         text-align: center;
         position: relative;
@@ -31,8 +29,8 @@
         width: 100%;
         padding: 32px 0;
         background-color: transparent;
-        border: 1px dashed $gray60;
+        border: 1px dashed var(--gray60);
         border-radius: 16px;
-        color: $gray30;
+        color: var(--gray30);
     }
 }

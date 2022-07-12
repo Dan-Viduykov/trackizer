@@ -1,0 +1,12 @@
+.link {}
+
+.label {
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    color: var(--gray30); 
+}
+
+.input[type="radio"]:checked ~ * { 
+    color: var(--white);
+}

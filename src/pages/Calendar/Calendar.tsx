@@ -1,12 +1,12 @@
 import { FC, useState } from "react";
 import './Calendar.scss'
 
-import HeaderTopMenu from "../../components/HeaderTopMenu";
 import SubsList from "../../components/SubsList";
 
 import { Select } from "antd";
 import 'antd/dist/antd.css';
 import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
 
 const { Option } = Select;
 
@@ -18,7 +18,7 @@ const Calendar: FC = () => {
     return (
         <main className="calendar shadow-screen">
             <section className="calendar__top section bookmark">
-                <HeaderTopMenu title="Calendar" gear/>
+                <Header title="Calendar" gear/>
                 <h2 className="calendar__title ft-7">Subs<br />Schedule</h2>
                 <div className="calendar__choose">
                     <p className="ft-2">3 subscriptions for today</p>

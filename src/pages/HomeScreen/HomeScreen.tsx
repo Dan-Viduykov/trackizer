@@ -2,12 +2,12 @@ import { FC } from "react";
 import './HomeScreen.scss'
 
 import logo from '../../assets/svg/logo.svg'
-import Indicator from "./Indicator";
-import Statistics from "./Statistics";
-import SubsMode from "./SubsMode";
+import Indicator from "./Indicator/Indicator";
+import Statistics from "./Statistics/Statistics";
+import SubsMode from "./SubsMode/SubsMode";
 
 import SubsList from "../../components/SubsList";
-import HeaderTopMenu from "../../components/HeaderTopMenu";
+import Header from "../../components/Header/Header";
 
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../../core/hooks/redux";
@@ -19,7 +19,7 @@ const HomeScreen: FC = () => {
     return (
         <main className="home shadow-screen">
             <section className="home__section section bookmark">
-                <HeaderTopMenu gear/>
+                <Header gear/>
                 <div className="home__counter">
                     <div className="home__total">
                         <div className="home__indicator">

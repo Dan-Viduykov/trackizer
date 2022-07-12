@@ -1,5 +1,3 @@
-@import '../../sass/style.scss';
-
 .subs {
     &__item {
         margin-bottom: 8px;
@@ -10,7 +8,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border: 1px solid $gray70;
+            border: 1px solid var(--gray70);
             border-radius: 16px;
             color: inherit;
             text-decoration: none;
@@ -20,7 +18,7 @@
             width: 40px;
             height: 40px;
             margin-right: 15px;
-            background: $gray40;
+            background: var(--gray40);
             border-radius: 12px;
         }
     
@@ -28,9 +26,9 @@
             width: 40px;
             height: 40px;
             margin-right: 15px;
-            background: $gray70;
+            background: var(--gray70);
             border-radius: 12px;
-            color: $gray30;
+            color: var(--gray30);
             text-align: center;
             
             p:first-child {

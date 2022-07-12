@@ -1,5 +1,5 @@
 import { FC } from "react";
-import './HeaderTopMenu.scss'
+import './Header.scss'
 
 import { faAngleLeft, faTrashCan, faGear } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,7 +8,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../core/hooks/redux";
 import { AppSlice } from "../../core/store/reducers/appReducer";
 
-interface HeaderTopMenuProps {
+interface HeaderProps {
     angleLeft?: boolean;
     trash?: string;
     gear?: boolean;
@@ -16,7 +16,7 @@ interface HeaderTopMenuProps {
     classesNames?: string;
 }
 
-const HeaderTopMenu: FC<HeaderTopMenuProps> = (props) => {
+const Header: FC<HeaderProps> = (props) => {
     const { angleLeft, title, trash, gear, classesNames } = props;
 
     const navigate = useNavigate();
@@ -61,4 +61,4 @@ const HeaderTopMenu: FC<HeaderTopMenuProps> = (props) => {
     )
 }
 
-export default HeaderTopMenu
+export default Header

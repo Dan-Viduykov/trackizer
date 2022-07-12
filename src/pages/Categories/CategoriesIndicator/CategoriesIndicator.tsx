@@ -1,16 +1,15 @@
 import { FC } from "react";
-import './BudgetsIndicator.scss'
+import './CategoriesIndicator.scss'
+import Header from "../../../components/Header/Header";
 
-import HeaderTopMenu from "../../../components/HeaderTopMenu";
-
-interface BudgetsIndicatorProps {
+interface CategoriesIndicatorProps {
     className: string;
 }
 
-const BudgetsIndicator: FC<BudgetsIndicatorProps> = ({ className }) => {
+const CategoriesIndicator: FC<CategoriesIndicatorProps> = ({ className }) => {
     return (
         <section className={`${className} indicator`}>
-            <HeaderTopMenu title="Spending & Budgets" gear/>
+            <Header title="Spending & Budgets" gear/>
             <div className="indicator__lines">
                 <div className="indicator__line"></div>
                 <div className="indicator__line"></div>
@@ -22,4 +21,4 @@ const BudgetsIndicator: FC<BudgetsIndicatorProps> = ({ className }) => {
     )
 }
 
-export { BudgetsIndicator }
+export { CategoriesIndicator }

@@ -1,9 +1,7 @@
-@import '../../sass/style.scss';
-
 .file {
     width: 160px;
     height: 160px;
-    background: $gray60;
+    background: var(--gray60);
     border-radius: 32px;
     position: relative;
 

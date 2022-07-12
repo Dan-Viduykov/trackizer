@@ -1,5 +1,3 @@
-@import '../../../sass/style.scss';
-
 .indicator {
     &__lines {
         width: 100%;
@@ -16,6 +14,6 @@
     }
     
     &__capital {
-        color: $gray30;
+        color: var(--white);
     }
 }

@@ -1,10 +1,10 @@
 import { FC, FormEvent, useState } from "react";
 import './NewSubscription.scss'
 
-import HeaderTopMenu from "../../components/HeaderTopMenu";
+import Header from "../../components/Header/Header";
 
 import UploadImage from "../../components/UploadImage";
-import { NewSubForm } from "./NewSubForm";
+import { NewSubForm } from "./NewSubForm/NewSubForm";
 
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../core/hooks/redux";
@@ -48,7 +48,7 @@ const NewSubscription: FC = () => {
         <main className="new-sub">
             <form onSubmit={handleSubmit}>
                 <section className="new-sub__choose section bookmark">
-                    <HeaderTopMenu angleLeft title="New" />
+                    <Header angleLeft title="New" />
                     <h3 className="new-sub__title ft-7">Add new subscription</h3>
                     <UploadImage
                         className="new-sub__change-img"

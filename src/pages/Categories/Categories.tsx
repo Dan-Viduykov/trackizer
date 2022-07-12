@@ -1,26 +1,26 @@
 import { FC } from "react";
-import './Budgets.scss';
+import './Categories.scss';
 
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import cool from '../../assets/svg/cool.svg'
-import { BudgetsIndicator } from "./BudgetsIndicator";
-import { Categories } from "./Categories";
+import { CategoriesIndicator } from "./CategoriesIndicator/CategoriesIndicator";
+import { CategoriesList } from "./CategoriesList/CategoriesList";
 import { NavLink, useLocation } from "react-router-dom";
-import { NewCategory } from "./NewCategory";
+import { NewCategory } from "./NewCategory/NewCategory";
 import Footer from "../../components/Footer/Footer";
 
-const Budgets: FC = () => {
+const Categories: FC = () => {
     const location = useLocation()
 
     return (
         <main className="budgets section">
-            <BudgetsIndicator className="budgets__indicator" />
+            <CategoriesIndicator className="budgets__indicator" />
             <p className="budgets__info">Your budgets are on track <img src={cool} alt="" /></p>
             {
                 location.pathname === '/budgets' ?
-                    <Categories className={'budgets__categories'} /> :
+                    <CategoriesList className={'budgets__categories'} /> :
                     <NewCategory className={'budgets__new-category'} />
             }
             <NavLink to={'/budgets/new'} className="budgets__add ft-2" >
@@ -31,4 +31,4 @@ const Budgets: FC = () => {
     )
 }
 
-export default Budgets
+export default Categories

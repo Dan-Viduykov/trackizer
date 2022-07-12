@@ -3,11 +3,11 @@ import './CreditCards.scss'
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import HeaderTopMenu from "../../components/HeaderTopMenu";
+import Header from "../../components/Header/Header";
 
-import { UserCard } from "./UserCard";
+import { UserCard } from "./UserCard/UserCard";
 import { NavLink, useLocation } from "react-router-dom";
-import { UserCardEdit } from "./UserCardEdit";
+import { UserCardEdit } from "./UserCardEdit/UserCardEdit";
 import Footer from "../../components/Footer/Footer";
 
 const CreditCards: FC = () => {
@@ -17,7 +17,7 @@ const CreditCards: FC = () => {
 
     return (
         <main className="credit-card section">
-            <HeaderTopMenu title="Credit Cards" gear/>
+            <Header title="Credit Cards" gear/>
             {card}
             {cardEdit}
             <section className="credit-card__subs">

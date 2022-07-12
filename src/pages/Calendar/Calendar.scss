@@ -1,15 +1,13 @@
-@import '../../sass/style.scss';
-
 .calendar {
     min-width: 100vw;
     min-height: 100vh;
     width: 100%;
     height: 100%;
-    background-color: $gray80;
+    background-color: var(--gray80);
 
     &__title {
         margin: 42px 0 16px;
-        color: $white;
+        color: var(--white);
     }
 
     &__choose {
@@ -19,7 +17,7 @@
         justify-content: space-between;
 
         p {
-            color: $gray30;
+            color: var(--gray30);
         }
     }
 
@@ -41,7 +39,7 @@
         padding: 8px 0;
         margin-right: 8px;
         position: relative;
-        background-color: $gray60;
+        background-color: var(--gray60);
         border-radius: 16px;
         text-align: center;
 
@@ -54,11 +52,11 @@
             font-weight: 500;
             font-size: 12px;
             line-height: 16px;
-            color: $gray30;
+            color: var(--gray30);
         }
 
         &--active {
-            background-color: $gray50;
+            background-color: var(--gray50);
         }
     }
 
@@ -81,7 +79,7 @@
             font-weight: 500;
             font-size: 12px;
             line-height: 16px;
-            color: $gray30;
+            color: var(--gray30);
         }
     }
 
@@ -95,7 +93,7 @@
             font-weight: 500;
             font-size: 12px;
             line-height: 16px;
-            color: $gray30;
+            color: var(--gray30);
         }
     }
 
@@ -108,7 +106,7 @@
         width: 160px;
         padding: 16px;
         margin: 5px;
-        background-color: $gray70;
+        background-color: var(--gray80);
         border-radius: 16px;
         position: relative;
         display: flex;

@@ -5,8 +5,8 @@ import { useAppSelector } from "../../core/hooks/redux";
 import { useParams } from "react-router-dom";
 import { ISub } from "../../core/modules/IApp";
 
-import {SubHeader} from "./SubHeader";
-import {SubMain} from "./SubMain";
+import {SubHeader} from "./SubHeader/SubHeader";
+import {SubMain} from "./SubMain/SubMain";
 
 const SubscriptionInfo: FC = () => {
     const params = useParams();

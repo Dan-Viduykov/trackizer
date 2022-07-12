@@ -5,10 +5,10 @@ import { faAngleRight, faArrowDownShortWide, faSpellCheck } from "@fortawesome/f
 import { faSun } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import HeaderTopMenu from "../../components/HeaderTopMenu";
 import { useAppSelector } from "../../core/hooks/redux";
 
 import { UserInfo } from "./UserInfo";
+import Header from "../../components/Header/Header";
 
 const AppSettings: FC = () => {
     const { sorting, theme, fontSize } = useAppSelector(state => state.appSettingsReducer)
@@ -16,7 +16,7 @@ const AppSettings: FC = () => {
     return (
         <main className="settings section">
             <section className="settings__header">
-                <HeaderTopMenu angleLeft title="Settings" />
+                <Header angleLeft title="Settings" />
                 <UserInfo />
             </section>
             <ul className="settings__category">

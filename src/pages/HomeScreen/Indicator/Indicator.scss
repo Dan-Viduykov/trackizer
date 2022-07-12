@@ -1,5 +1,3 @@
-@import '../../../sass/style.scss';
-
 .spinner {
     position: absolute;
     top: -84px;
@@ -10,7 +8,7 @@
     
     
     & .outer {
-        stroke: $gray60;
+        stroke: var(--gray60);
         stroke-linecap: round;
         stroke-dasharray: 270 90;
         stroke-dashoffset: 236px;
@@ -18,7 +16,7 @@
     }
     
     & .middle {
-        stroke: $gray70;
+        stroke: var(--gray70);
         stroke-linecap: round;
         stroke-dasharray: 270 90;
         stroke-dashoffset: 236px;

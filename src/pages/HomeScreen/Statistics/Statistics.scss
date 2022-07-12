@@ -1,5 +1,3 @@
-@import '../../../sass/style.scss';
-
 .statistic {
     display: flex;
     justify-content: space-between;
@@ -19,13 +17,13 @@
             left: 25%;
         }
 
-        &:nth-child(1)::after { background: $accent-p50; }
-        &:nth-child(2)::after { background: $primary-10; }
-        &:nth-child(3)::after { background: $accent-s50; }
+        &:nth-child(1)::after { background: var(--accent-p50); }
+        &:nth-child(2)::after { background: var(--primary-10); }
+        &:nth-child(3)::after { background: var(--accent-s50); }
     }
     
     &__name {
-        color: $gray40;
+        color: var(--gray40);
     }
     
     &__info {} 

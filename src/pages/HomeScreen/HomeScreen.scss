@@ -1,7 +1,5 @@
-@import '../../sass/style.scss';
-
 .home { 
-    background-color: $gray80;
+    background-color: var(--gray80);
     
     &__counter {
         margin: 0 auto 20px;
@@ -45,7 +43,7 @@
             font-weight: 600;
             font-size: 12px;
             line-height: 16px;
-            color: $gray40;
+            color: var(--gray40);
         }
     }    
 
@@ -55,7 +53,7 @@
         border: none;
         border-radius: 100px;
         background: rgba(255, 255, 255, 0.1);
-        color: $white;
+        color: var(--white);
         display: inline-block;
         position: relative;
     }
