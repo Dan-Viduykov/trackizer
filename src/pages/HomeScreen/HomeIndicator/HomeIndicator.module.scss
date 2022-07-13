@@ -7,7 +7,7 @@
     filter: drop-shadow( 0px 0px 25px rgba(255, 121, 102, 0.5) );
     
     
-    & .outer {
+    &__outer {
         stroke: var(--gray60);
         stroke-linecap: round;
         stroke-dasharray: 270 90;
@@ -15,7 +15,7 @@
         z-index: 2;
     }
     
-    & .middle {
+    &__middle {
         stroke: var(--gray70);
         stroke-linecap: round;
         stroke-dasharray: 270 90;
@@ -24,7 +24,7 @@
         overflow: hidden;
     }
     
-    & .inner {
+    &__inner {
         stroke-linecap: round;
         stroke: url(#linearColors2);
         z-index: 4;

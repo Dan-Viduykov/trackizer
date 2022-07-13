@@ -1,5 +1,5 @@
 import { FC } from "react";
-import './SubsMode.scss'
+import styles from './SubsMode.module.scss'
 
 import { useAppDispatch } from "../../../core/hooks/redux";
 import { AppSlice } from "../../../core/store/reducers/appReducer";
@@ -9,11 +9,21 @@ const SubsMode: FC = () => {
     const dispatch = useAppDispatch()
 
     return (
-        <fieldset className="subs-mode">
+        <fieldset className={styles.modes}>
             <input id="subscriptions" type="radio" name="mode" defaultChecked />
-            <label className="subs-mode__item ft-1 border" htmlFor="subscriptions" onClick={() => dispatch(changeMode('imgs'))}>Your subscriptions</label>
+            <label
+                htmlFor="subscriptions"
+                className={`${styles.modes__item} ft__1 border`}
+                onClick={() => dispatch(changeMode('imgs'))}>
+                Your subscriptions
+            </label>
             <input id="bills" type="radio" name="mode" />
-            <label htmlFor="bills" className="subs-mode__item ft-1 border" onClick={() => dispatch(changeMode('dates'))}>Upcoming bills</label>
+            <label
+                htmlFor="bills"
+                className={`${styles.modes__item} ft__1 border`}
+                onClick={() => dispatch(changeMode('dates'))}>
+                Upcoming bills
+            </label>
         </fieldset>
     )
 }

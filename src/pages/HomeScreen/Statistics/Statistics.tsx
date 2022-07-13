@@ -1,5 +1,5 @@
 import { FC } from "react";
-import './Statistics.scss'
+import styles from './Statistics.module.scss'
 import { useAppSelector } from "../../../core/hooks/redux";
 
 const Statistics: FC = () => {
@@ -15,18 +15,18 @@ const Statistics: FC = () => {
     }
 
     return (
-        <section className="statistic">
-            <div className="statistic__item border">
-                <p className="statistic__name ft-1">Active subs</p>
-                <p className="statistic__info ft-2">{activeSubs}</p>
+        <section className={styles.statistic}>
+            <div className={`${styles.statistic__item} border`}>
+                <p className={`${styles.statistic__name} ft__1`}>Active subs</p>
+                <p className={`${styles.statistic__info} ft__2`}>{activeSubs}</p>
             </div>
-            <div className="statistic__item border">
-                <p className="statistic__name ft-1">Highest subs</p>
-                <p className="statistic__info ft-2">{subscriptions ? highestSubs : 0}</p>
+            <div className={`${styles.statistic__item} border`}>
+                <p className={`${styles.statistic__name} ft__1`}>Highest subs</p>
+                <p className={`${styles.statistic__info} ft__2`}>{subscriptions ? highestSubs : 0}</p>
             </div>
-            <div className="statistic__item border">
-                <p className="statistic__name ft-1">Lowest subs</p>
-                <p className="statistic__info ft-2">{subscriptions ? lowestSubs : 0}</p>
+            <div className={`${styles.statistic__item} border`}>
+                <p className={`${styles.statistic__name} ft__1`}>Lowest subs</p>
+                <p className={`${styles.statistic__info} ft__2`}>{subscriptions ? lowestSubs : 0}</p>
             </div>
         </section>
     )

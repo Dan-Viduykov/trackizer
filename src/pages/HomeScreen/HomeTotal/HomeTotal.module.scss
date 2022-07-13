@@ -1,37 +1,13 @@
-.home { 
-    background-color: var(--gray80);
-    
-    &__counter {
-        margin: 0 auto 20px;
-        text-align: center;
-        position: relative;
-
-        &::after {
-            width: 100%;
-            height: 100%;
-            content: '';
-            position: absolute;
-            top: -52px;
-            left: calc(50% - 112.5px);
-            background-image: url('../../assets/svg/Ellipse3.svg');    
-            background-repeat: no-repeat;
-            background-size: 225px 225px;
-        }
-    }
-
-    &__total {
-
-    }   
-
+.total {
     &__indicator {
         margin-bottom: 75px;
     }
-
+    
     &__logo {
         margin-bottom: 24px;
     }
-
-    &__total-price {
+    
+    &__price {
         margin-bottom: 30px;
         position: relative;
         display: flex;
@@ -46,8 +22,8 @@
             color: var(--gray40);
         }
     }    
-
-    &__total-btn {
+    
+    &__btn {
         margin-bottom: 36px;
         padding: 8px 12px;
         border: none;
@@ -57,6 +33,4 @@
         display: inline-block;
         position: relative;
     }
-
-    &__subs {}
-}
+}   
