@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useAppSelector } from "../../core/hooks/redux";
+import { useAppSelector } from "../../../../core/hooks/redux";
 import styles from './Statistics.module.scss'
 
 const Statistics: FC = () => {

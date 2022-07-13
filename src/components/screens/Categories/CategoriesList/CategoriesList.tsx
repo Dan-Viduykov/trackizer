@@ -1,8 +1,8 @@
 import { FC } from "react";
 import './Categories.scss'
-import { useAppSelector } from "../../core/hooks/redux";
-import { ICategory } from "../../core/modules/IApp";
 import Category from "../Category/Category";
+import { useAppSelector } from "../../../../core/hooks/redux";
+import { ICategory } from "../../../../core/modules/IApp";
 
 interface CategoriesListProps {
     className: string;

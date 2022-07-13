@@ -1,9 +1,9 @@
 import { FC, FormEvent, useState } from "react";
 import styles from './NewCategory.module.scss'
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../core/hooks/redux";
-import { AppSlice } from "../../core/store/reducers/appReducer";
-import Button from "../Button";
+import { useAppDispatch, useAppSelector } from "../../../../core/hooks/redux";
+import { AppSlice } from "../../../../core/store/reducers/appReducer";
+import Button from "../../../Button";
 
 interface NewCategoryProps {
     className: string

@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { useAppDispatch } from "../../core/hooks/redux";
-import { AppSlice } from "../../core/store/reducers/appReducer";
+import { useAppDispatch } from "../../../../core/hooks/redux";
+import { AppSlice } from "../../../../core/store/reducers/appReducer";
 import styles from './SubsMode.module.scss'
 
 const SubsMode: FC = () => {

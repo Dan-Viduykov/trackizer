@@ -2,11 +2,11 @@ import { FC, useState } from "react";
 import styles from './Category.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGhost } from "@fortawesome/free-solid-svg-icons";
-import { ICategory } from "../../core/modules/IApp";
-import { useAppDispatch, useAppSelector } from "../../core/hooks/redux";
-import { AppSlice } from "../../core/store/reducers/appReducer";
-import Button from "../Button";
 import CategoryIndicator from "../CategoryIndicator/CategoryIndicator";
+import { ICategory } from "../../../../core/modules/IApp";
+import { useAppDispatch, useAppSelector } from "../../../../core/hooks/redux";
+import { AppSlice } from "../../../../core/store/reducers/appReducer";
+import Button from "../../../Button";
 
 interface CategoryProps {
     category: ICategory

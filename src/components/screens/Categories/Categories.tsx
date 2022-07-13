@@ -7,9 +7,9 @@ import { NavLink, useLocation } from "react-router-dom";
 import cool from '../../../assets/svg/cool.svg'
 
 import Footer from "../../Footer/Footer";
-import CategoriesList from "../../CategoriesList/CategoriesList";
-import NewCategory from "../../NewCategory/NewCategory";
-import CategoriesIndicator from "../../CategoriesIndicator/CategoriesIndicator";
+import CategoriesList from "./CategoriesList/CategoriesList";
+import NewCategory from "./NewCategory/NewCategory";
+import CategoriesIndicator from "./CategoriesIndicator/CategoriesIndicator";
 
 
 const Categories: FC = () => {

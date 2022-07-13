@@ -1,6 +1,6 @@
 import { FC } from "react";
+import Header from "../../../Header/Header";
 import styles from './CategoriesIndicator.module.scss'
-import Header from "../Header/Header";
 
 interface CategoriesIndicatorProps {
     className: string;
