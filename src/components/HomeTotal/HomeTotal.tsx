@@ -1,9 +1,9 @@
 import { FC } from "react";
 import styles from './HomeTotal.module.scss';
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../../core/hooks/redux";
 import HomeIndicator from "../HomeIndicator/HomeIndicator";
-import logo from '../../../assets/svg/logo.svg'
+import logo from '../../assets/svg/logo.svg'
+import { useAppSelector } from "../../core/hooks/redux";
 
 const HomeTotal: FC = () => {
     const { moneySpent } = useAppSelector(state => state.appReducer)

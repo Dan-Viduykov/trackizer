@@ -6,7 +6,7 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import AppSettings from "./pages/AppSettings/AppSettings";
 import Calendar from "./pages/Calendar/Calendar";
 import CreditCards from "./pages/CreditCards/CreditCards";
-import HomeScreen from "./pages/HomeScreen/HomeScreen";
+import HomePage from "./pages/home";
 import NewSubscription from "./pages/NewSubscription/NewSubscription";
 import SubscriptionInfo from "./pages/SubscriptionInfo/SubscriptionInfo";
 import Categories from "./pages/Categories/Categories";
@@ -16,7 +16,7 @@ const App: FC = () => {
         <div className="app">
             <Outlet />
             <Routes>
-                <Route path="/" element={<HomeScreen />}/>
+                <Route path="/" element={<HomePage />}/>
                 <Route path="/budgets" element={<Categories />}/>
                 <Route path="/budgets/new" element={<Categories />}/>
                 <Route path="/calendar" element={<Calendar />}/>

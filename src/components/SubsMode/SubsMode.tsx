@@ -1,12 +1,11 @@
 import { FC } from "react";
+import { useAppDispatch } from "../../core/hooks/redux";
+import { AppSlice } from "../../core/store/reducers/appReducer";
 import styles from './SubsMode.module.scss'
 
-import { useAppDispatch } from "../../../core/hooks/redux";
-import { AppSlice } from "../../../core/store/reducers/appReducer";
-
 const SubsMode: FC = () => {
-    const { changeMode } = AppSlice.actions
-    const dispatch = useAppDispatch()
+    const { changeMode } = AppSlice.actions;
+    const dispatch = useAppDispatch();
 
     return (
         <fieldset className={styles.modes}>

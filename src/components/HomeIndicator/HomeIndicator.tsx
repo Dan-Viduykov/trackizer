@@ -1,6 +1,6 @@
 import { FC } from "react";
+import { useAppSelector } from "../../core/hooks/redux";
 import styles from './HomeIndicator.module.scss'
-import { useAppSelector } from "../../../core/hooks/redux";
 
 interface HomeIndicatorProps {
     className?: string;

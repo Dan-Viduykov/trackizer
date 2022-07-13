@@ -1,14 +1,13 @@
 import { FC } from "react";
 import styles from './HomeScreen.module.scss'
 
-import Statistics from "./Statistics/Statistics";
-import SubsMode from "./SubsMode/SubsMode";
-
 import SubsList from "../../components/SubsList/SubsList";
 import Header from "../../components/Header/Header";
 
 import Footer from "../../components/Footer/Footer";
-import HomeTotal from "./HomeTotal/HomeTotal";
+import HomeTotal from "../HomeTotal/HomeTotal";
+import SubsMode from "../SubsMode/SubsMode";
+import Statistics from "../Statistics/Statistics";
 
 const HomeScreen: FC = () => {
     return (

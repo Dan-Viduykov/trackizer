@@ -1,4 +1,4 @@
-.statistic {
+.statistics {
     display: flex;
     justify-content: space-between;
 
@@ -26,6 +26,8 @@
         color: var(--gray40);
     }
     
-    &__info {} 
+    &__info {
+        margin: 0;
+    } 
 }
 
