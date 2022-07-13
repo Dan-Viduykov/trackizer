@@ -1,4 +1,4 @@
-.new-category {
+.new {
     padding: 16px;
     margin-bottom: 8px;
     background: var(--gray80);
@@ -13,24 +13,27 @@
         width: 80%;
         margin: 0 auto 8px;
         text-align: center;
+        background: transparent;
+        border: none;
         
         &:first-child {
             padding: 5px;
             border: none;
             border-radius: 0;
             border-bottom: 1px solid var(--gray70);
-
+            
             &:focus {
                 box-shadow: none;
             }
         }
-
+            
         &:last-child {
+            border: 1px solid var(--gray70);
             margin-bottom: 0;
         }
     }
 
-    &__button-save {
+    &__btn {
         margin-top: 16px;
         padding: 5px 20px;
     }

@@ -1,8 +1,8 @@
 import { FC } from "react";
 import './Categories.scss'
-import { useAppSelector } from "../../../core/hooks/redux";
-import { ICategory } from "../../../core/modules/IApp";
-import { Category } from "./Category";
+import { useAppSelector } from "../../core/hooks/redux";
+import { ICategory } from "../../core/modules/IApp";
+import Category from "../Category/Category";
 
 interface CategoriesListProps {
     className: string;
@@ -14,11 +14,9 @@ const CategoriesList: FC<CategoriesListProps> = ({ className }) => {
     
     return (
         <ul className={`${className} categories`}>
-            { categories.map((category: ICategory) => {
-                return <Category {...category} key={uniqid()} />
-            }) }
+            { categories.map((category: ICategory) => <Category category={category} key={uniqid()} />) }
         </ul>
     )
 }
 
-export {CategoriesList}
+export default CategoriesList

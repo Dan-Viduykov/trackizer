@@ -1,9 +1,9 @@
 import { FC, FormEvent, useState } from "react";
+import styles from './NewCategory.module.scss'
 import { useNavigate } from "react-router-dom";
-import Button from "../../../components/Button";
-import { useAppDispatch, useAppSelector } from "../../../core/hooks/redux";
-import { AppSlice } from "../../../core/store/reducers/appReducer";
-import './NewCategory.scss'
+import { useAppDispatch, useAppSelector } from "../../core/hooks/redux";
+import { AppSlice } from "../../core/store/reducers/appReducer";
+import Button from "../Button";
 
 interface NewCategoryProps {
     className: string
@@ -13,9 +13,8 @@ interface NewCategoryProps {
 const NewCategory: FC<NewCategoryProps> = ({ className }) => {
     const { colors } = useAppSelector(state => state.appReducer);
     const dispatch = useAppDispatch();
-    const { addCategory } = AppSlice.actions;
     const navigate = useNavigate();
-
+    const { addCategory } = AppSlice.actions;
 
     const [ valueTitle, setValueTitle ] = useState('');
     const [ valueLimit, setValueLimit ] = useState<number>(100);
@@ -36,22 +35,22 @@ const NewCategory: FC<NewCategoryProps> = ({ className }) => {
     }
     
     return (
-        <form className={`new-category ${className}`} onSubmit={handleSubmit} >
+        <form className={`${styles.new} ${className}`} onSubmit={handleSubmit} >
             <input 
-                className="new-category__input input"
+                className={`${styles.new__input} input`}
                 placeholder="title"
                 type="text"
                 value={valueTitle}
                 onChange={(event) => setValueTitle(event.target.value)} />
             <input 
-                className="new-category__input input"
-                placeholder="price"
+                className={`${styles.new__input} input`}
+                placeholder="limit"
                 type="number"
                 value={valueLimit}
                 onChange={(event) => setValueLimit(Number(event.target.value))} />
-            <Button className="new-category__button-save" btnType="Primary">Save</Button>
+            <Button className={styles.new__btn}  btnType="Primary">Save</Button>
         </form>
     )
 }
 
-export {NewCategory}
+export default NewCategory

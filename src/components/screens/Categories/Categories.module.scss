@@ -1,4 +1,5 @@
 .budgets {
+    padding-bottom: 100px;
 
     &__indicator {
         margin-bottom: 40px;
@@ -21,8 +22,9 @@
     }
 
     &__categories {}
+    &__new {}
     
-    &__add {
+    &__btn {
         display: flex;
         justify-content: center;
         align-items: center;
