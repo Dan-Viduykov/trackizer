@@ -1,5 +1,5 @@
 import { FC } from "react";
-import HomeScreen from "../components/HomeScreen/HomeScreen";
+import HomeScreen from "../components/screens/HomeScreen/HomeScreen";
 
 const HomePage: FC = () => {
     return (
