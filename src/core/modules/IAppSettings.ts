@@ -1,7 +1,25 @@
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+
 export interface IAppSettingsState {
-    sorting: string;
-    theme: string;
-    fontSize: number;
+    subscriptions: {
+        sorting: {
+            icon: IconDefinition,
+            title: string,
+            mods: 'date' | 'name'
+        }
+    }
+    appearance: {
+        theme: {
+            icon: IconDefinition,
+            title: string,
+            mods: 'dark' | 'light'
+        },
+        fontSize: {
+            icon: IconDefinition,
+            title: string,
+            mods: 12 | 14 | 16
+        }
+    }
 }
 
 export enum AppSettingsActionsTypes {

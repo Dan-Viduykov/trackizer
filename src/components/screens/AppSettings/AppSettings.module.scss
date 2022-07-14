@@ -1,0 +1,13 @@
+.settings {
+    
+    &__header {
+        position: relative;
+        margin-bottom: 24px ;
+    }
+
+    &__categories {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+    }
+}

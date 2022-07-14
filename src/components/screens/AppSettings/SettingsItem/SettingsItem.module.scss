@@ -1,0 +1,33 @@
+.item {
+    padding: 6px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__icon {
+        font-size: 18px;
+        margin-right: 20px;
+    }
+    
+    &__name {
+        margin-right: auto;
+    }
+    
+    &__description {
+        color: #A2A2B5;
+    }
+
+    &__angle {
+        font-size: 14px;
+        margin-left: 8px;
+    }
+}
+
+p {
+    margin-bottom: 0;
+}

@@ -1,13 +1,12 @@
 import { FC, FormEvent, useState } from "react";
-import './UserInfo.scss';
-
-import { useAppDispatch, useAppSelector } from "../../../core/hooks/redux";
-import UploadImage from "../../../components/UploadImage";
-import Button from "../../../components/Button";
+import styles from './UserInfo.module.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { UserSlice } from "../../../core/store/reducers/userReducer";
-import { UserState } from "../../../core/modules/IUser";
+import { useAppDispatch, useAppSelector } from "../../../../core/hooks/redux";
+import { UserSlice } from "../../../../core/store/reducers/userReducer";
+import { UserState } from "../../../../core/modules/IUser";
+import UploadImage from "../../../UploadImage";
+import Button from "../../../Button";
 
 const UserInfo: FC = () => {
     const { img, name, mail } = useAppSelector(state => state.userReducer);
@@ -31,25 +30,25 @@ const UserInfo: FC = () => {
     }
 
     return (
-        <form className="user" onSubmit={handleSubmit}>
+        <form className={styles.user} onSubmit={handleSubmit}>
             <UploadImage
-                className="user__img"
+                className={styles.user__img}
                 valueImage={valueImage}
                 setValueImage={setValueImage}
                 name='user-img' >
-                <FontAwesomeIcon className="user__plus" icon={faPlus} />
+                <FontAwesomeIcon className={styles.user__plus} icon={faPlus} />
             </UploadImage>
             <input
-                className="user__name ft-4" 
+                className={`${styles.user__name} ft__4`} 
                 name="user-name"
                 value={valueName}
                 onChange={(event) => setValueName(event.target.value)} />
             <input
-                className="user__mail ft-body-s" 
+                className={`${styles.user__mail} ft__body_s`}  
                 name="user-mail"
                 value={valueMail}
                 onChange={(event) => setValueMail(event.target.value)} />
-            <Button btnType="Secondary" className="user__btn-edit">Edit profile</Button>
+            <Button btnType="Secondary" className={styles.user__btn}>Edit profile</Button>
         </form>
     )
 }

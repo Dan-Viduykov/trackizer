@@ -1,0 +1,19 @@
+.item {
+    margin-bottom: 24px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__title {
+        color: #fff;
+        margin-bottom: 8px;
+    }
+    
+    &__list {
+        padding: 16px 20px;
+        background: rgba(78, 78, 97, 0.2);
+        border-radius: 16px;
+        position: relative;
+    }
+}
