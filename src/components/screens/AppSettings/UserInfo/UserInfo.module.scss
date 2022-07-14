@@ -31,4 +31,10 @@
     &__plus {
         font-size: 40px;
     }
+
+    &__alert {
+        position: absolute;
+        top: 20px;
+        width: 80%;
+    }
 }

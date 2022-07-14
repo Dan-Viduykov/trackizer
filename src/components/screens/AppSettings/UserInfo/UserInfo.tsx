@@ -7,6 +7,7 @@ import { UserSlice } from "../../../../core/store/reducers/userReducer";
 import { UserState } from "../../../../core/modules/IUser";
 import UploadImage from "../../../UploadImage";
 import Button from "../../../Button";
+import { Alert } from "antd";
 
 const UserInfo: FC = () => {
     const { img, name, mail } = useAppSelector(state => state.userReducer);
@@ -16,17 +17,20 @@ const UserInfo: FC = () => {
     const [ valueImage, setValueImage ] = useState(img)
     const [ valueName, setValueName ] = useState(name)
     const [ valueMail, setValueMail ] = useState(mail)
+    const [ visible, setVisible ] = useState(false);
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-
+        
         const modifiedUser: UserState = {
             name: valueName,
             mail: valueMail,
             img: valueImage,
         }
-
+        
         dispatch(changeUser(modifiedUser));
+        setTimeout(() => { setVisible(false)}, 1000);
+        setVisible(true);
     }
 
     return (
@@ -49,6 +53,7 @@ const UserInfo: FC = () => {
                 value={valueMail}
                 onChange={(event) => setValueMail(event.target.value)} />
             <Button btnType="Secondary" className={styles.user__btn}>Edit profile</Button>
+            { visible ? (<Alert className={styles.user__alert} message="User edit" type="success" showIcon />) : null}
         </form>
     )
 }
