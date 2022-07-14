@@ -1,9 +1,4 @@
-.wrap {
-    padding: 0;
-    background-color: var(--gray80);
-}
-
-.new-sub {
+.sub {
  
     &__choose {
         background: var(--gray70);
@@ -11,8 +6,12 @@
         border-radius: 0px 0px 24px 24px;
     }
 
-    &__change-img {
+    &__img {
         margin: 32px auto 16px;
+
+        span {
+            font-size: 18px;
+        }
     }
 
     &__title {
@@ -20,16 +19,13 @@
         text-align: center;
         color: var(--white);
     }
-    
-    &__input-file {
-        margin: 0 auto;
-        width: 160px;
-        height: 160px;
-        background-color: var(--gray70);
 
+    &__plus {
+        font-size: 40px;
+        margin-bottom: 16px;
     }
 
-    &__sub-name {
+    &__name {
         text-align: center;
     }
 }

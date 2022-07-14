@@ -1,17 +1,16 @@
 import { FC, FormEvent, useState } from "react";
-import './NewSubscription.scss'
-
-import Header from "../../components/Header/Header";
-
-import UploadImage from "../../components/UploadImage";
-import { NewSubForm } from "./NewSubForm/NewSubForm";
+import styles from './NewSubscription.module.scss'
+import Header from "../../Header/Header";
+import UploadImage from "../../UploadImage";
+import NewSubForm from "./NewSubForm/NewSubForm";
+import Placeholder from "../../../assets/img/placeholder.jpg";
 
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../core/hooks/redux";
-import { AppSlice } from "../../core/store/reducers/appReducer";
-import { ISub } from "../../core/modules/IApp";
-
-import Placeholder from "../../assets/img/placeholder.jpg";
+import { useAppDispatch } from "../../../core/hooks/redux";
+import { AppSlice } from "../../../core/store/reducers/appReducer";
+import { ISub } from "../../../core/modules/IApp";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const NewSubscription: FC = () => {
     const navigate = useNavigate();
@@ -45,18 +44,21 @@ const NewSubscription: FC = () => {
     }
 
     return (
-        <main className="new-sub">
+        <main className={styles.sub}>
             <form onSubmit={handleSubmit}>
-                <section className="new-sub__choose section bookmark">
+                <section className={`${styles.sub__choose} section bookmark`}>
                     <Header angleLeft title="New" />
-                    <h3 className="new-sub__title ft-7">Add new subscription</h3>
+                    <h3 className={`${styles.sub__title} ft__7`}>Add new subscription</h3>
                     <UploadImage
-                        className="new-sub__change-img"
+                        className={styles.sub__img}
                         setValueImage={setValueImage}
-                        valueImage={valueImage} />
-                    <div className="new-sub__sub-name ft-2">HGBO GO</div>             
+                        valueImage={valueImage}>
+                        <FontAwesomeIcon className={styles.sub__plus} icon={faPlus} />
+                        <span>Upload Image</span>
+                    </UploadImage>
+                    <div className={`${styles.sub__name} ft__2`}>HGBO GO</div>             
                 </section>
-                <section className="section">
+                <section className={`section`}>
                     <NewSubForm
                         setValuePrice={setValuePrice}
                         setValueDescription={setValueDescription}

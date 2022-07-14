@@ -1,11 +1,12 @@
-.sub-form {
+.form {
     &__info {
         margin-bottom: 24px;
 
         label {
            margin-bottom: 4px;
            color: var(--gray50);
-           text-align: center;
+           display: flex;
+           justify-content: center;
         }
     }
     
@@ -115,7 +116,7 @@
         }
     }
     
-    &__btn-save {
+    &__save {
         width: calc(100% - 48px);
         margin: 55px auto 0;
         padding: 14px 12px;

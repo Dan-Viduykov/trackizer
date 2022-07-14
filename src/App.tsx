@@ -8,8 +8,8 @@ import CreditCards from "./pages/CreditCards/CreditCards";
 import HomePage from "./pages/home";
 import SettingsPage from "./pages/appSettings";
 import CategoriesPage from "./pages/categories";
-import NewSubscription from "./pages/NewSubscription/NewSubscription";
 import SubscriptionPage from "./pages/subscriptionInfo";
+import NewSubPage from "./pages/newSubscription";
 
 const App: FC = () => {
     return (
@@ -25,7 +25,7 @@ const App: FC = () => {
                 <Route path="/settings" element={<SettingsPage />}/>
                 <Route path="/settings/edit" element={<SettingsPage />}/>
                 <Route path="/sub-info/:title" element={<SubscriptionPage />}/>
-                <Route path="/sub-new" element={<NewSubscription />}/>
+                <Route path="/sub-new" element={<NewSubPage />}/>
             </Routes>
         </div>
     )

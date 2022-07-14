@@ -12,7 +12,7 @@ const SubHeader: FC<SubHeaderProps> = ({ idx }) => {
 
     return (
         <section className={styles.header}>
-            <Header title="Subscription info" trash={id}/>
+            <Header angleLeft title="Subscription info" trash={id}/>
             <div className={styles.header__img}>
                 <img src="" alt="" />
             </div>
