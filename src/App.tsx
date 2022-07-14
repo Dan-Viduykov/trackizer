@@ -9,7 +9,7 @@ import HomePage from "./pages/home";
 import SettingsPage from "./pages/appSettings";
 import CategoriesPage from "./pages/categories";
 import NewSubscription from "./pages/NewSubscription/NewSubscription";
-import SubscriptionInfo from "./pages/SubscriptionInfo/SubscriptionInfo";
+import SubscriptionPage from "./pages/subscriptionInfo";
 
 const App: FC = () => {
     return (
@@ -24,7 +24,7 @@ const App: FC = () => {
                 <Route path="/creditCards/edit" element={<CreditCards />}/>
                 <Route path="/settings" element={<SettingsPage />}/>
                 <Route path="/settings/edit" element={<SettingsPage />}/>
-                <Route path="/sub-info/:title" element={<SubscriptionInfo />}/>
+                <Route path="/sub-info/:title" element={<SubscriptionPage />}/>
                 <Route path="/sub-new" element={<NewSubscription />}/>
             </Routes>
         </div>

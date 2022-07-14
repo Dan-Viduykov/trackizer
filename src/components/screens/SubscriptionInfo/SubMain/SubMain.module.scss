@@ -1,4 +1,4 @@
-.sub-info {
+.sub {
     height: 100%;
     padding: 32px 20px;
     background-color: #282833;
@@ -8,19 +8,17 @@
     flex: 1 1 100%;
     justify-content: space-between;
 
-    &__settings {}
-}
+    &__params {
+        height: 100%;
+        padding: 16px 20px;
+        background: rgba(78, 78, 97, 0.2);
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
 
-.sub-settings {
-    height: 100%;
-    padding: 16px 20px;
-    background: rgba(78, 78, 97, 0.2);
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-
-    &__item {
+    &__parameter {
         padding: 6px 0;
         margin-bottom: 22px;
         display: flex;
@@ -36,10 +34,11 @@
     &__description {
         color: #A2A2B5;
     }
-
-    &__btn-save {
+    
+    &__btn {
         margin-top: 32px;
     }
 }
+
 
 
